@@ -53,4 +53,7 @@ extension MeasureDescription {
     func largeLogo() -> UIImage {
         return #imageLiteral(resourceName: "poop.png")
     }
+    func infoText() -> String {
+        return "Change your policy"
+    }
 }

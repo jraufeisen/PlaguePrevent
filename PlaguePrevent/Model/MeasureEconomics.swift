@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+extension EconomicHelpMeasure {
+
+    func popUp() -> PopupDialog {
+        
+        let economics = EconomicHelpMeasure.init(money: 0)
+        let popup = PopupDialog(title: economics.shortTitle(), message: economics.infoText(), image: economics.largeLogo())
+
+        // TODO: Enter number here
+        
+        popup.transitionStyle = .bounceUp
+        return popup
+    }
+
+    
+}

@@ -15,6 +15,7 @@ protocol MeasureDescription {
     func popUp() -> PopupDialog
     func smallLogo() -> UIImage
     func largeLogo() -> UIImage
+    func infoText() -> String
 }
 
 // Global setting, slider
@@ -36,6 +37,9 @@ enum MeasureEffectiveness : MeasureDescription {
             return "Freiwilligkeit"
         }
     }
+    func infoText() -> String {
+        return "Mit diesem Regler veränderst du die Stärke deiner Maßnahmen. Bedenke,dass Maßnahmen angemessen sein müssen, da Sie sonst die Moral negativ beeinflussen können"
+    }
 }
 
 enum MeasureTypeBorder : MeasureDescription {
@@ -54,6 +58,12 @@ enum MeasureTypeBorder : MeasureDescription {
         case .open: return "Komplett offen"
         }
     }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Grenzpolitik")
+    }
+    func infoText() -> String {
+        return "Mit diesem Regler definierst du, wer deine Grenzen passieren darf. Bedenke, dass striktere Maßnahmen zu starken Staus und Warenengpässen führen können"
+    }
 }
 
 enum MeasureTypeSchools : MeasureDescription{
@@ -68,6 +78,12 @@ enum MeasureTypeSchools : MeasureDescription{
         case .open: return "Geöffnet"
         case .closed: return "Geschlossen"
         }
+    }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Öffentliche Einrichtungen.jpg")
+    }
+    func infoText() -> String {
+        return "Öffentliche Einrichtungen sind Orte großer Versammlungen und somit leichte Infektionsmultiplikatoren"
     }
 }
 
@@ -89,6 +105,12 @@ enum MeasureTypeTraffic : MeasureDescription{
         case .noRestriction: return "Keine Einschränkungen"
         }
     }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Reisebeschränkungen.jpg")
+    }
+    func infoText() -> String {
+        return "Diese Maßnahme schränkt, je nach stärke, die Bewegungsfreiheit deiner Bürger ein und hilft dabei eine Ausbreitung zu verlangsamen"
+    }
 }
 
 enum MeasureTypeWork : MeasureDescription{
@@ -104,6 +126,12 @@ enum MeasureTypeWork : MeasureDescription{
         case .homeOfficeWherePossible: return "HomeOffice wenn möglich"
         case .asUsual: return "Normalbetrieb"
         }
+    }
+    func largeLogo() -> UIImage {
+       return #imageLiteral(resourceName: "Arbeit.jpg")
+    }
+    func infoText() -> String {
+        return "Arbeitsplätze sind Orte großer Versammlungen und somit leichte Infektionsmultiplikatoren"
     }
 }
 
@@ -121,6 +149,12 @@ enum MeasureTypeAusgangssperre : MeasureDescription{
         case .sperrstunden: return "Einige Sperrstunden"
         }
     }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Ausgangssperre.jpg")
+    }
+    func infoText() -> String {
+        return "Ausgangssperren minimieren soziale Kontakte und somit das Risiko der Übertragung des Virus"
+    }
 }
 
 enum MeasureTypeBusinesses : MeasureDescription{
@@ -136,6 +170,12 @@ enum MeasureTypeBusinesses : MeasureDescription{
         case .restrictedClosingHours: return "Verkürzte Öffnungszeiten"
         case .businessAsUsual: return "Normalbetrieb"
         }
+    }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Öffentliche Versorgung.jpg")
+    }
+    func infoText() -> String {
+        return "Die öffentliche Versorgung schließt alle Betriebe des alltäglichen Lebens ein. Von Kleidungen bis zu Krankenhäusern. Diese können bis auf die Grundversorgung heruntergefahren werden"
     }
 }
 
@@ -155,6 +195,12 @@ enum MeasureTypeCommunication : MeasureDescription{
         case .calmingTransparency: return "Bevölkerung beruhigen"
         case .fullTransparency: return "Volle Transparenz"
         }
+    }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Kommunikation.jpg")
+    }
+    func infoText() -> String {
+        return "Die kommunikation entscheidet wie viele Informationen du freigibst und wie ehrlich du zur Bevölkerung bist"
     }
 }
 
@@ -176,6 +222,12 @@ class ScienceMeasure: Measure, MeasureDescription{
     func longDescription() -> String {
         return "\(money)€ in Forschung investieren"
     }
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Forschungsgelder.jpg")
+    }
+    func infoText() -> String {
+        return "Je höher die Forschungsgelder desto intensiver wird geforscht. Beachte, dass dir die Mittel auch ausgehen können"
+    }
 }
 
 // Invest X money in health services
@@ -191,7 +243,12 @@ class HealthServicesMeasure: Measure, MeasureDescription {
     func longDescription() -> String {
         return "\(money)€ in das Gesundheitssystem investieren"
     }
-
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Gesundheitsbudget.jpg")
+    }
+    func infoText() -> String {
+        return "Durch das Gesundheitsbudget werden Dinge wie Krankenhäuser und andere medizinische Einrichtungen beeinflusst. Beachte, dass dir die Mittel auch ausgehen können"
+    }
 }
 
 // Invest X money in Wirtschaftshilfe
@@ -207,5 +264,10 @@ class EconomicHelpMeasure: Measure, MeasureDescription {
     func longDescription() -> String {
         return "\(money)€ in wirtschaftliche Hilfe investieren"
     }
-
+    func largeLogo() -> UIImage {
+       return  #imageLiteral(resourceName: "Wirtschaftshilfe.jpg")
+    }
+    func infoText() -> String {
+        return "Unternehmen leiden unter einer eingeschränkten Gesellschaft, somit können unter anderem arbeitsplätze verloren gehen. Wirtschaftshilfen arbeiten dagegen an. Beachte, dass dir die Mittel auch ausgehen können"
+    }
 }
