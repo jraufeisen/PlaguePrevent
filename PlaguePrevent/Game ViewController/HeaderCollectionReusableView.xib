@@ -18,23 +18,17 @@
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMs-9n-irE">
                             <rect key="frame" x="8" y="38" width="580" height="291"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxN-d3-fnX">
-                                    <rect key="frame" x="236" y="0.0" width="108.5" height="69.5"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="58"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="xxN-d3-fnX" firstAttribute="centerX" secondItem="fMs-9n-irE" secondAttribute="centerX" id="P4A-mE-RKf"/>
-                            </constraints>
                             <viewLayoutGuide key="contentLayoutGuide" id="JfB-Rc-r2Z"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="rno-ar-A6e"/>
                         </scrollView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ing-Vk-V0z">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxN-d3-fnX">
+                            <rect key="frame" x="244" y="42" width="108.5" height="69.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="58"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ing-Vk-V0z">
                             <rect key="frame" x="265.5" y="114" width="65" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -81,16 +75,20 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="mcf-Q0-fTs" firstAttribute="centerX" secondItem="Mmw-WJ-d4h" secondAttribute="centerX" id="2FK-jt-dTi"/>
-                        <constraint firstItem="fMs-9n-irE" firstAttribute="top" secondItem="m8l-4O-oWE" secondAttribute="bottom" constant="12" id="HZH-Nk-Dq4"/>
+                        <constraint firstItem="Ing-Vk-V0z" firstAttribute="centerX" secondItem="xxN-d3-fnX" secondAttribute="centerX" id="AeT-RZ-FNc"/>
+                        <constraint firstItem="fMs-9n-irE" firstAttribute="top" secondItem="m8l-4O-oWE" secondAttribute="bottom" constant="15" id="HZH-Nk-Dq4"/>
                         <constraint firstItem="m8l-4O-oWE" firstAttribute="top" secondItem="Mmw-WJ-d4h" secondAttribute="top" constant="8" id="JKx-HB-4rC"/>
+                        <constraint firstItem="xxN-d3-fnX" firstAttribute="centerX" secondItem="Mmw-WJ-d4h" secondAttribute="centerX" id="NA3-Xl-wGo"/>
                         <constraint firstAttribute="trailing" secondItem="m8l-4O-oWE" secondAttribute="trailing" id="SwE-AH-nk7"/>
                         <constraint firstItem="Yka-06-tGx" firstAttribute="leading" secondItem="Mmw-WJ-d4h" secondAttribute="leading" id="UkQ-sM-hEn"/>
+                        <constraint firstItem="xxN-d3-fnX" firstAttribute="top" secondItem="m8l-4O-oWE" secondAttribute="bottom" constant="7.5" id="UqD-Vw-4qd"/>
                         <constraint firstAttribute="trailing" secondItem="fMs-9n-irE" secondAttribute="trailing" constant="8" id="ZaW-8I-g2f"/>
                         <constraint firstAttribute="bottom" secondItem="Yka-06-tGx" secondAttribute="bottom" id="fGe-Rg-7T0"/>
                         <constraint firstItem="fMs-9n-irE" firstAttribute="leading" secondItem="Mmw-WJ-d4h" secondAttribute="leading" constant="8" id="fdA-k3-FzM"/>
                         <constraint firstItem="Yka-06-tGx" firstAttribute="top" secondItem="fMs-9n-irE" secondAttribute="bottom" constant="7" id="jdV-Xl-QJs"/>
                         <constraint firstAttribute="trailing" secondItem="Yka-06-tGx" secondAttribute="trailing" id="kxU-we-cm6"/>
                         <constraint firstAttribute="bottom" secondItem="mcf-Q0-fTs" secondAttribute="bottom" constant="50" id="qxo-qg-YId"/>
+                        <constraint firstItem="Ing-Vk-V0z" firstAttribute="top" secondItem="xxN-d3-fnX" secondAttribute="bottom" constant="2.5" id="rtD-Eg-t1z"/>
                     </constraints>
                 </view>
             </subviews>

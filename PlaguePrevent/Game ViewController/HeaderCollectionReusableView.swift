@@ -13,8 +13,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet private var contentView: UIView!
     @IBOutlet weak var topLabel: MarqueeLabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var bigLabel: UILabel!
     @IBOutlet weak var smallLabel: UILabel!
     
@@ -39,7 +37,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         topLabel.animationCurve = .linear
         topLabel.fadeLength = 0
         topLabel.restartLabel()
-        scrollView.delegate = self
     }
     
 
@@ -69,19 +66,9 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         let newContentWidth = scrollView.frame.size.width*CGFloat(cards.count+1)
         scrollView.contentSize = CGSize.init(width: newContentWidth, height: scrollView.frame.size.height)
         cards.append(card)
-        updatePageControl()
     }
     
-    func updatePageControl() {
-        pageControl.numberOfPages = cards.count
-        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = pageIndex
-    }
     
 }
 
-extension HeaderCollectionReusableView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updatePageControl()
-    }
-}
+
