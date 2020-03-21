@@ -15,6 +15,11 @@ class PopulationCard: UIView {
     @IBOutlet weak var hospitalBarView: BarView!
     @IBOutlet weak var budgetBarView: BarView!
     
+    @IBOutlet weak var moralLabel: UILabel!
+    @IBOutlet weak var hospitalLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

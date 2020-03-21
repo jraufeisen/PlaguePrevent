@@ -17,6 +17,9 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private var cards = [UIView]()
     
+    var casesCard: CasesCard?
+    var populationcard: PopulationCard?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,11 +40,13 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 
     func addPopulationCard() {
         let card = PopulationCard.init(frame: scrollView.frame)
+        populationcard = card
         addCard(card: card)
     }
     
     func addCasesCard() {
         let card = CasesCard.init(frame: scrollView.frame)
+        casesCard = card
         addCard(card: card)
     }
     

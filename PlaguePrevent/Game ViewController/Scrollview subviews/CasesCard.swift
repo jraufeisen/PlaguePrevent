@@ -14,6 +14,9 @@ class CasesCard: UIView {
     @IBOutlet var deathsBarView: BarView!
     @IBOutlet var recoveredBarView: BarView!
 
+    @IBOutlet weak var deathsLabel: UILabel!
+    @IBOutlet weak var recoveredLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
