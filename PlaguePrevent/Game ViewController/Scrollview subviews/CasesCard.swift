@@ -8,9 +8,11 @@
 
 import UIKit
 
-class Card: UIView {
+class CasesCard: UIView {
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet var deathsBarView: BarView!
+    @IBOutlet var recoveredBarView: BarView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +25,7 @@ class Card: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("Card", owner: self, options: nil)
+        Bundle.main.loadNibNamed("CasesCard", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         //contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		21035550F24B8CDBBBCC60F0 /* Pods_PlaguePrevent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */; };
 		EB390DAB24264B6B0009CEB0 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DA824264B340009CEB0 /* BarView.swift */; };
-		EB390DAE24264FD00009CEB0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DAC24264FD00009CEB0 /* Card.swift */; };
 		EB390DAF242650EA0009CEB0 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */; };
-		EB390DB0242651580009CEB0 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390DAD24264FD00009CEB0 /* Card.xib */; };
+		EB390DB3242659D50009CEB0 /* CasesCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390DB1242659D40009CEB0 /* CasesCard.xib */; };
+		EB390DB4242659D50009CEB0 /* CasesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DB2242659D50009CEB0 /* CasesCard.swift */; };
+		EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390DB524265B720009CEB0 /* PopulationCard.xib */; };
+		EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DB624265B730009CEB0 /* PopulationCard.swift */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -49,8 +51,10 @@
 		1FE97EC5A2A2A1A5C20BA1CB /* Pods-PlaguePrevent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaguePrevent.release.xcconfig"; path = "Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent.release.xcconfig"; sourceTree = "<group>"; };
 		221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaguePrevent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB390DA824264B340009CEB0 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
-		EB390DAC24264FD00009CEB0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		EB390DAD24264FD00009CEB0 /* Card.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
+		EB390DB1242659D40009CEB0 /* CasesCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CasesCard.xib; sourceTree = "<group>"; };
+		EB390DB2242659D50009CEB0 /* CasesCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesCard.swift; sourceTree = "<group>"; };
+		EB390DB524265B720009CEB0 /* PopulationCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopulationCard.xib; sourceTree = "<group>"; };
+		EB390DB624265B730009CEB0 /* PopulationCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationCard.swift; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EB390DB924265BCB0009CEB0 /* Scrollview subviews */ = {
+			isa = PBXGroup;
+			children = (
+				EB390DB2242659D50009CEB0 /* CasesCard.swift */,
+				EB390DB1242659D40009CEB0 /* CasesCard.xib */,
+				EB390DB624265B730009CEB0 /* PopulationCard.swift */,
+				EB390DB524265B720009CEB0 /* PopulationCard.xib */,
+			);
+			path = "Scrollview subviews";
+			sourceTree = "<group>";
+		};
 		EB745E4224257361005280BB = {
 			isa = PBXGroup;
 			children = (
@@ -166,8 +181,7 @@
 				EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */,
 				EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */,
 				EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */,
-				EB390DAC24264FD00009CEB0 /* Card.swift */,
-				EB390DAD24264FD00009CEB0 /* Card.xib */,
+				EB390DB924265BCB0009CEB0 /* Scrollview subviews */,
 			);
 			path = "Game ViewController";
 			sourceTree = "<group>";
@@ -275,13 +289,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */,
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
 				EBB04BDF242596C900BB2794 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
 				EBDFEC05242634AF00C896FC /* .gitkeep in Resources */,
 				EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */,
 				EB745E5624257361005280BB /* Main.storyboard in Resources */,
-				EB390DB0242651580009CEB0 /* Card.xib in Resources */,
+				EB390DB3242659D50009CEB0 /* CasesCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */,
 				EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */,
 				EB745E5324257361005280BB /* GameViewController.swift in Sources */,
 				EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */,
-				EB390DAE24264FD00009CEB0 /* Card.swift in Sources */,
 				EBDFEC1524263CB700C896FC /* MeasureTypeBorder.swift in Sources */,
 				EBDFEC04242634AF00C896FC /* PopupDialog.swift in Sources */,
 				EBDFEC1B24263DE700C896FC /* DefaultMeasureDescription.swift in Sources */,
+				EB390DB4242659D50009CEB0 /* CasesCard.swift in Sources */,
 				EBDFEC01242634AF00C896FC /* UIImageView+Calculations.swift in Sources */,
 				EBDFEC0D242634AF00C896FC /* PopupDialogDefaultButtons.swift in Sources */,
 				EBDFEC13242637F700C896FC /* MeasurePackage.swift in Sources */,

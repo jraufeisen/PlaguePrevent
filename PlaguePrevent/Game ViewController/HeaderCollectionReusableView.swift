@@ -34,8 +34,18 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         
     }
     
-    func addBasicCard() {
-        let card = Card.init(frame: scrollView.frame)
+
+    func addPopulationCard() {
+        let card = PopulationCard.init(frame: scrollView.frame)
+        addCard(card: card)
+    }
+    
+    func addCasesCard() {
+        let card = CasesCard.init(frame: scrollView.frame)
+        addCard(card: card)
+    }
+    
+    private func addCard(card: UIView) {
         scrollView.addSubview(card)
         card.translatesAutoresizingMaskIntoConstraints = false
 
@@ -51,7 +61,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         cards.append(card)
         updatePageControl()
     }
-
+    
     func updatePageControl() {
         pageControl.numberOfPages = cards.count
         let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)

@@ -68,9 +68,8 @@ extension GameViewController: UICollectionViewDelegate {
                                                                            for: indexPath) as! HeaderCollectionReusableView
                 header = cell
                 DispatchQueue.main.async {
-                    self.header?.addBasicCard() // Do this here and layout is fine
-                    self.header?.addBasicCard() // Do this here and layout is fine
-
+                    self.header?.addCasesCard()
+                    self.header?.addPopulationCard()
                 }
                 return cell
             default:
