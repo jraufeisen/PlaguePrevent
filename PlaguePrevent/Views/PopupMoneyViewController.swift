@@ -14,9 +14,18 @@ class PopupMoneyViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    
+    var image: UIImage?
+    var shortTitle: String = ""
+    var longDescription: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
+        
+        imageView.image = image
+        titleLabel.text = shortTitle
+        subtitleLabel.text = longDescription
     }
 
 

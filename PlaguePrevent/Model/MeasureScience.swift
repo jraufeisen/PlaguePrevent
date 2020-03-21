@@ -15,9 +15,9 @@ extension ScienceMeasure {
         let science = ScienceMeasure.init(money: 0)
 
         let moneyVC = PopupMoneyViewController(nibName: "PopupMoneyViewController", bundle: .main)
-        moneyVC.titleLabel.text = science.shortTitle()
-        moneyVC.subtitleLabel.text = science.longDescription()
-        moneyVC.imageView.image = science.largeLogo()
+        moneyVC.shortTitle = science.shortTitle()
+        moneyVC.longDescription = science.longDescription()
+        moneyVC.image = science.largeLogo()
         
         let popup = PopupDialog(viewController: moneyVC,
                                 buttonAlignment: .horizontal,
