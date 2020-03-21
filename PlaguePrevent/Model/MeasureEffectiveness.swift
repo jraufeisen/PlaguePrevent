@@ -1,5 +1,5 @@
 //
-//  DefaultMeasureDescription.swift
+//  BorderPopup.swift
 //  PlaguePrevent
 //
 //  Created by Johannes on 21.03.20.
@@ -7,21 +7,12 @@
 //
 
 import Foundation
-import UIKit
 
-extension MeasureDescription {
-    func shortTitle() -> String {
-        return "Measure A"
-    }
-    func longDescription() -> String {
-        return "Long description for each case"
-    }
-    func titleImage() -> UIImage {
-        return #imageLiteral(resourceName: "Bag")
-    }
+extension MeasureEffectiveness {
+
     func popUp() -> PopupDialog {
         // Create the dialog
-        let popup = PopupDialog(title: "Border", message: "Change your border policy", image: #imageLiteral(resourceName: "nyc.jpg") , preferredWidth: 100)
+        let popup = PopupDialog(title: "test", message: "Change your border policy", image: #imageLiteral(resourceName: "nyc.jpg") , preferredWidth: 100)
 
         // Create buttons
         let buttonOne = CancelButton(title: "CANCEL") {
@@ -46,11 +37,5 @@ extension MeasureDescription {
         return popup
     }
 
-    func smallLogo() -> UIImage {
-        return #imageLiteral(resourceName: "poop.png")
-    }
     
-    func largeLogo() -> UIImage {
-        return #imageLiteral(resourceName: "poop.png")
-    }
 }

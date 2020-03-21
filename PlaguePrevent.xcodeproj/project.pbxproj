@@ -23,6 +23,16 @@
 		EB745E63242573C6005280BB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E62242573C6005280BB /* Measure.swift */; };
 		EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */; };
 		EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */; };
+		EB982D6224267B320080099D /* MeasureEffectiveness.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6024267AB90080099D /* MeasureEffectiveness.swift */; };
+		EB982D6424267BAF0080099D /* MeasureCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6324267BAF0080099D /* MeasureCommunication.swift */; };
+		EB982D6624267BC30080099D /* MeasureSchools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6524267BC30080099D /* MeasureSchools.swift */; };
+		EB982D6824267BCC0080099D /* MeasureTraffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6724267BCC0080099D /* MeasureTraffic.swift */; };
+		EB982D6A24267BD30080099D /* MeasureWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6924267BD30080099D /* MeasureWork.swift */; };
+		EB982D6C24267BE90080099D /* MeasureAusgangssperre.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6B24267BE90080099D /* MeasureAusgangssperre.swift */; };
+		EB982D6E24267BFB0080099D /* MeasureScience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6D24267BFB0080099D /* MeasureScience.swift */; };
+		EB982D7024267C670080099D /* MeasureHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6F24267C670080099D /* MeasureHealth.swift */; };
+		EB982D7224267C750080099D /* MeasureEconomics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D7124267C750080099D /* MeasureEconomics.swift */; };
+		EB982D7424267C860080099D /* MeasureBusinesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D7324267C860080099D /* MeasureBusinesses.swift */; };
 		EBB04BDF242596C900BB2794 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */; };
 		EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBEC242634A000C896FC /* InteractiveTransition.swift */; };
 		EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBED242634A000C896FC /* PresentationController.swift */; };
@@ -66,6 +76,16 @@
 		EB745E62242573C6005280BB /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuresCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasuresCollectionViewCell.xib; sourceTree = "<group>"; };
+		EB982D6024267AB90080099D /* MeasureEffectiveness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureEffectiveness.swift; sourceTree = "<group>"; };
+		EB982D6324267BAF0080099D /* MeasureCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureCommunication.swift; sourceTree = "<group>"; };
+		EB982D6524267BC30080099D /* MeasureSchools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureSchools.swift; sourceTree = "<group>"; };
+		EB982D6724267BCC0080099D /* MeasureTraffic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTraffic.swift; sourceTree = "<group>"; };
+		EB982D6924267BD30080099D /* MeasureWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureWork.swift; sourceTree = "<group>"; };
+		EB982D6B24267BE90080099D /* MeasureAusgangssperre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureAusgangssperre.swift; sourceTree = "<group>"; };
+		EB982D6D24267BFB0080099D /* MeasureScience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureScience.swift; sourceTree = "<group>"; };
+		EB982D6F24267C670080099D /* MeasureHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHealth.swift; sourceTree = "<group>"; };
+		EB982D7124267C750080099D /* MeasureEconomics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureEconomics.swift; sourceTree = "<group>"; };
+		EB982D7324267C860080099D /* MeasureBusinesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureBusinesses.swift; sourceTree = "<group>"; };
 		EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeaderCollectionReusableView.swift; path = "/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.swift"; sourceTree = "<absolute>"; };
 		EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = "/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.xib"; sourceTree = "<absolute>"; };
 		EBDFEBEC242634A000C896FC /* InteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
@@ -232,7 +252,17 @@
 				EB745E62242573C6005280BB /* Measure.swift */,
 				EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */,
 				EBDFEC10242637CD00C896FC /* MeasurePackage.swift */,
+				EB982D7324267C860080099D /* MeasureBusinesses.swift */,
 				EBDFEC1424263CB700C896FC /* MeasureTypeBorder.swift */,
+				EB982D6024267AB90080099D /* MeasureEffectiveness.swift */,
+				EB982D6324267BAF0080099D /* MeasureCommunication.swift */,
+				EB982D6524267BC30080099D /* MeasureSchools.swift */,
+				EB982D6724267BCC0080099D /* MeasureTraffic.swift */,
+				EB982D6924267BD30080099D /* MeasureWork.swift */,
+				EB982D6B24267BE90080099D /* MeasureAusgangssperre.swift */,
+				EB982D6D24267BFB0080099D /* MeasureScience.swift */,
+				EB982D6F24267C670080099D /* MeasureHealth.swift */,
+				EB982D7124267C750080099D /* MeasureEconomics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,18 +387,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB982D6E24267BFB0080099D /* MeasureScience.swift in Sources */,
+				EB982D6824267BCC0080099D /* MeasureTraffic.swift in Sources */,
 				EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */,
+				EB982D6624267BC30080099D /* MeasureSchools.swift in Sources */,
 				EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */,
 				EB745E5324257361005280BB /* GameViewController.swift in Sources */,
+				EB982D7024267C670080099D /* MeasureHealth.swift in Sources */,
 				EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */,
 				EBDFEC1524263CB700C896FC /* MeasureTypeBorder.swift in Sources */,
 				EBDFEC04242634AF00C896FC /* PopupDialog.swift in Sources */,
 				EBDFEC1B24263DE700C896FC /* DefaultMeasureDescription.swift in Sources */,
+				EB982D6424267BAF0080099D /* MeasureCommunication.swift in Sources */,
 				EB390DB4242659D50009CEB0 /* CasesCard.swift in Sources */,
 				EBDFEC01242634AF00C896FC /* UIImageView+Calculations.swift in Sources */,
 				EBDFEC0D242634AF00C896FC /* PopupDialogDefaultButtons.swift in Sources */,
 				EBDFEC13242637F700C896FC /* MeasurePackage.swift in Sources */,
+				EB982D6A24267BD30080099D /* MeasureWork.swift in Sources */,
 				EBDFEC07242634AF00C896FC /* PopupDialogButton.swift in Sources */,
+				EB982D6224267B320080099D /* MeasureEffectiveness.swift in Sources */,
 				EBDFEC0B242634AF00C896FC /* PopupDialogDefaultViewController.swift in Sources */,
 				EBDFEC0C242634AF00C896FC /* TransitionAnimations.swift in Sources */,
 				EBDFEC0E242634AF00C896FC /* PresentationManager.swift in Sources */,
@@ -376,11 +413,14 @@
 				EBDFEC06242634AF00C896FC /* PopupDialogOverlayView.swift in Sources */,
 				EBDFEC03242634AF00C896FC /* PopupDialogDefaultView.swift in Sources */,
 				EBDFEC0A242634AF00C896FC /* PopupDialog+Keyboard.swift in Sources */,
+				EB982D6C24267BE90080099D /* MeasureAusgangssperre.swift in Sources */,
 				EB390DAB24264B6B0009CEB0 /* BarView.swift in Sources */,
+				EB982D7424267C860080099D /* MeasureBusinesses.swift in Sources */,
 				EB390DAF242650EA0009CEB0 /* HeaderCollectionReusableView.swift in Sources */,
 				EBDFEC09242634AF00C896FC /* TransitionAnimator.swift in Sources */,
 				EB745E4F24257361005280BB /* AppDelegate.swift in Sources */,
 				EB745E63242573C6005280BB /* Measure.swift in Sources */,
+				EB982D7224267C750080099D /* MeasureEconomics.swift in Sources */,
 				EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */,
 				EB745E5124257361005280BB /* SceneDelegate.swift in Sources */,
 				EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */,

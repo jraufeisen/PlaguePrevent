@@ -13,6 +13,8 @@ protocol MeasureDescription {
     func longDescription() -> String
     func titleImage() -> UIImage
     func popUp() -> PopupDialog
+    func smallLogo() -> UIImage
+    func largeLogo() -> UIImage
 }
 
 // Global setting, slider
