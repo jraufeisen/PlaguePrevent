@@ -119,6 +119,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EB18E14324266D79001A71AC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */,
+				EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */,
+				EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */,
+				EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		EB390DAA24264B370009CEB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				EB745E5224257361005280BB /* GameViewController.swift */,
-				EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */,
-				EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */,
-				EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */,
-				EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */,
+				EB18E14324266D79001A71AC /* CollectionView */,
 				EB390DB924265BCB0009CEB0 /* Scrollview subviews */,
 			);
 			path = "Game ViewController";

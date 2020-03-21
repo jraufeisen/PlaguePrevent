@@ -23,7 +23,8 @@ class GameViewController: UIViewController {
         measuresCollectionView.register(headerNib, forSupplementaryViewOfKind: CSStickyHeaderParallaxHeader, withReuseIdentifier: "HeaderForCollectionViewID")
         measuresCollectionView.register(UINib.init(nibName: "MeasuresCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "MeasuresCellID")
         measuresCollectionView.collectionViewLayout = stickySplitLayout
-        stickySplitLayout.parallaxHeaderAlwaysOnTop = true        
+        stickySplitLayout.parallaxHeaderAlwaysOnTop = true
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -70,6 +71,11 @@ extension GameViewController: UICollectionViewDelegate {
                 DispatchQueue.main.async {
                     self.header?.addCasesCard()
                     self.header?.addPopulationCard()
+                    self.header?.liveTickerMessages.append("test hier")
+                    self.header?.liveTickerMessages.append("test hier 2")
+                    self.header?.liveTickerMessages.append("test hier 3")
+                    self.header?.liveTickerMessages.append("test hier 4")
+
                 }
                 return cell
             default:
@@ -94,7 +100,7 @@ extension GameViewController: UICollectionViewDelegate {
 extension GameViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 100, height: 100)
+        return CGSize.init(width: 150, height: 150)
     }
 }
 

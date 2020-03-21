@@ -106,9 +106,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
+                <outlet property="bigLabel" destination="xxN-d3-fnX" id="96L-4M-VSd"/>
                 <outlet property="contentView" destination="Mmw-WJ-d4h" id="5zN-TW-xvU"/>
                 <outlet property="pageControl" destination="cca-Fx-f4H" id="Ml4-0A-fOH"/>
                 <outlet property="scrollView" destination="fMs-9n-irE" id="P69-mC-1OU"/>
+                <outlet property="smallLabel" destination="Ing-Vk-V0z" id="pWS-iT-CFm"/>
                 <outlet property="topLabel" destination="m8l-4O-oWE" id="drZ-a8-md6"/>
             </connections>
             <point key="canvasLocation" x="-213.04347826086959" y="310.04464285714283"/>

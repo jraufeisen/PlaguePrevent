@@ -157,12 +157,12 @@ enum MeasureTypeCommunication : MeasureDescription{
 }
 
 // Abstract superclass
-class Measure: NSObject, MeasureDescription {
+class Measure: NSObject {
 
 }
 
 // Invest X money in science
-class ScienceMeasure: Measure {
+class ScienceMeasure: Measure, MeasureDescription{
     
     let money: Int
     init(money: Int) {
@@ -177,7 +177,7 @@ class ScienceMeasure: Measure {
 }
 
 // Invest X money in health services
-class HealthServicesMeasure: Measure {
+class HealthServicesMeasure: Measure, MeasureDescription {
     
     let money: Int
     init(money: Int) {
@@ -193,7 +193,7 @@ class HealthServicesMeasure: Measure {
 }
 
 // Invest X money in Wirtschaftshilfe
-class EconomicHelpMeasure: Measure {
+class EconomicHelpMeasure: Measure, MeasureDescription {
     
     let money: Int
     init(money: Int) {

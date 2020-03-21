@@ -15,26 +15,31 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var bigLabel: UILabel!
+    @IBOutlet weak var smallLabel: UILabel!
+    
     private var cards = [UIView]()
     
     var casesCard: CasesCard?
     var populationcard: PopulationCard?
     
+    var liveTickerMessages = [String]() {
+        didSet {
+            topLabel.text = liveTickerMessages.joined(separator: " +++ ")
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        topLabel.text = "+++ Live Ticker +++ Something happened +++ anything else +++ Wer das liest ist doof +++"
         topLabel.labelize = false
-
         topLabel.type = .continuous
         topLabel.animationDelay = 0
         topLabel.speed = .rate(70)
         topLabel.animationCurve = .linear
         topLabel.fadeLength = 0
-
         topLabel.restartLabel()
         scrollView.delegate = self
-        
     }
     
 
