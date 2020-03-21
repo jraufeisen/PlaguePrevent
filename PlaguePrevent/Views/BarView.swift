@@ -10,9 +10,14 @@ import UIKit
 
 class BarView: UIView {
 
-    var fillPercent: CGFloat = 0.5 {
+    var cornerRadius = 7 {
         didSet {
-            
+            updateFill()
+        }
+    }
+    var fillPercent: CGFloat = 0.8 {
+        didSet {
+            updateFill()
         }
     }
     
@@ -21,7 +26,6 @@ class BarView: UIView {
     }
     
     private func updateFill() {
-        let cornerRadius = 7
         let fillHeight = bounds.height * fillPercent
         let maskRect = CGRect.init(x: bounds.origin.x, y: bounds.size.height - fillHeight, width: bounds.size.width, height: fillHeight)
         layer.round(roundedRect: maskRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
