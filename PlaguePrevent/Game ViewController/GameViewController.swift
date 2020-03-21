@@ -23,15 +23,15 @@ class GameViewController: UIViewController {
         measuresCollectionView.register(headerNib, forSupplementaryViewOfKind: CSStickyHeaderParallaxHeader, withReuseIdentifier: "HeaderForCollectionViewID")
         measuresCollectionView.register(UINib.init(nibName: "MeasuresCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "MeasuresCellID")
         measuresCollectionView.collectionViewLayout = stickySplitLayout
-        stickySplitLayout.parallaxHeaderAlwaysOnTop = true
+        stickySplitLayout.parallaxHeaderAlwaysOnTop = true        
     }
-
 
     override func viewDidLayoutSubviews() {
         stickySplitLayout.parallaxHeaderReferenceSize = CGSize.init(width: measuresCollectionView.frame.width, height: 450) // set only after collectionview has been lyouted
         stickySplitLayout.parallaxHeaderMinimumReferenceSize = CGSize.init(width: measuresCollectionView.frame.width, height: 300)
-
     }
+    
+
     
 }
 
@@ -67,7 +67,11 @@ extension GameViewController: UICollectionViewDelegate {
                                                                            withReuseIdentifier: "HeaderForCollectionViewID",
                                                                            for: indexPath) as! HeaderCollectionReusableView
                 header = cell
+                DispatchQueue.main.async {
+                    self.header?.addBasicCard() // Do this here and layout is fine
+                    self.header?.addBasicCard() // Do this here and layout is fine
 
+                }
                 return cell
             default:
                 assertionFailure("other kinds not implemented")

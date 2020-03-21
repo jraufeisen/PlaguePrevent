@@ -12,6 +12,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet private var contentView: UIView!
     @IBOutlet weak var topLabel: MarqueeLabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    private var cards = [UIView]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,19 +30,37 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         topLabel.fadeLength = 0
 
         topLabel.restartLabel()
+        scrollView.delegate = self
+        
+    }
+    
+    func addBasicCard() {
+        let card = Card.init(frame: scrollView.frame)
+        scrollView.addSubview(card)
+        card.translatesAutoresizingMaskIntoConstraints = false
+
+        let widthConstraint = NSLayoutConstraint.init(item: card, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint.init(item: card, attribute: .height, relatedBy: .equal, toItem: scrollView, attribute: .height, multiplier: 1, constant: 0)
+        let newCenterX = CGFloat(cards.count)*scrollView.frame.width
+        let centerX = NSLayoutConstraint.init(item: card, attribute: .centerX, relatedBy: .equal, toItem: scrollView, attribute: .centerX, multiplier: 1, constant: newCenterX)
+        let centerY = NSLayoutConstraint.init(item: card, attribute: .centerY, relatedBy: .equal, toItem: scrollView, attribute: .centerY, multiplier: 1, constant: 0)
+        NSLayoutConstraint.activate([widthConstraint, heightConstraint, centerY, centerX])
+        
+        let newContentWidth = scrollView.frame.size.width*CGFloat(cards.count+1)
+        scrollView.contentSize = CGSize.init(width: newContentWidth, height: scrollView.frame.size.height)
+        cards.append(card)
+        updatePageControl()
     }
 
+    func updatePageControl() {
+        pageControl.numberOfPages = cards.count
+
+    }
+    
 }
 
-extension UIView {
-    
-    func snapshot() -> UIImage? {
-        layoutIfNeeded()
-        updateConstraintsIfNeeded()
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
-        }
+extension HeaderCollectionReusableView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
     }
-    
 }
