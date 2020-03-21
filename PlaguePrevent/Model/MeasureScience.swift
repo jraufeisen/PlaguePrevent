@@ -13,9 +13,26 @@ extension ScienceMeasure {
     func popUp() -> PopupDialog {
         
         let science = ScienceMeasure.init(money: 0)
-        let popup = PopupDialog(title: science.shortTitle(), message: science.infoText(), image: science.largeLogo())
 
-        // TODO: Enter number here
+        let moneyVC = PopupMoneyViewController(nibName: "PopupMoneyViewController", bundle: .main)
+        moneyVC.titleLabel.text = science.shortTitle()
+        moneyVC.subtitleLabel.text = science.longDescription()
+        moneyVC.imageView.image = science.largeLogo()
+        
+        let popup = PopupDialog(viewController: moneyVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceUp,
+                                tapGestureDismissal: true,
+                                panGestureDismissal: true)
+        
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+
+        }
+
+        let buttonTwo = DefaultButton(title: "RATE", height: 60) {
+
+        }
+        popup.addButtons([buttonOne, buttonTwo])
         
         popup.transitionStyle = .bounceUp
         return popup

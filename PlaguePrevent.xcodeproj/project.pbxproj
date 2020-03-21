@@ -14,6 +14,8 @@
 		EB390DB4242659D50009CEB0 /* CasesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DB2242659D50009CEB0 /* CasesCard.swift */; };
 		EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390DB524265B720009CEB0 /* PopulationCard.xib */; };
 		EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DB624265B730009CEB0 /* PopulationCard.swift */; };
+		EB47A34C2426D48100868B50 /* PopupMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB47A34A2426D48100868B50 /* PopupMoneyViewController.swift */; };
+		EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB47A34B2426D48100868B50 /* PopupMoneyViewController.xib */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -66,6 +68,8 @@
 		EB390DB2242659D50009CEB0 /* CasesCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesCard.swift; sourceTree = "<group>"; };
 		EB390DB524265B720009CEB0 /* PopulationCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopulationCard.xib; sourceTree = "<group>"; };
 		EB390DB624265B730009CEB0 /* PopulationCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationCard.swift; sourceTree = "<group>"; };
+		EB47A34A2426D48100868B50 /* PopupMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMoneyViewController.swift; sourceTree = "<group>"; };
+		EB47A34B2426D48100868B50 /* PopupMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMoneyViewController.xib; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				EB390DA824264B340009CEB0 /* BarView.swift */,
+				EB47A34A2426D48100868B50 /* PopupMoneyViewController.swift */,
+				EB47A34B2426D48100868B50 /* PopupMoneyViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
 				EBB04BDF242596C900BB2794 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
+				EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */,
 				EBDFEC05242634AF00C896FC /* .gitkeep in Resources */,
 				EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */,
 				EB745E5624257361005280BB /* Main.storyboard in Resources */,
@@ -402,6 +409,7 @@
 				EB982D6824267BCC0080099D /* MeasureTraffic.swift in Sources */,
 				EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */,
 				EB982D6624267BC30080099D /* MeasureSchools.swift in Sources */,
+				EB47A34C2426D48100868B50 /* PopupMoneyViewController.swift in Sources */,
 				EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */,
 				EB745E5324257361005280BB /* GameViewController.swift in Sources */,
 				EB982D7024267C670080099D /* MeasureHealth.swift in Sources */,
