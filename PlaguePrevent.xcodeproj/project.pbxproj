@@ -23,6 +23,7 @@
 		EB745E63242573C6005280BB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E62242573C6005280BB /* Measure.swift */; };
 		EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */; };
 		EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */; };
+		EB7CCAD62426849800786B4D /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CCAD52426849800786B4D /* Simulation.swift */; };
 		EB982D6224267B320080099D /* MeasureEffectiveness.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6024267AB90080099D /* MeasureEffectiveness.swift */; };
 		EB982D6424267BAF0080099D /* MeasureCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6324267BAF0080099D /* MeasureCommunication.swift */; };
 		EB982D6624267BC30080099D /* MeasureSchools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB982D6524267BC30080099D /* MeasureSchools.swift */; };
@@ -76,6 +77,7 @@
 		EB745E62242573C6005280BB /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuresCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasuresCollectionViewCell.xib; sourceTree = "<group>"; };
+		EB7CCAD52426849800786B4D /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		EB982D6024267AB90080099D /* MeasureEffectiveness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureEffectiveness.swift; sourceTree = "<group>"; };
 		EB982D6324267BAF0080099D /* MeasureCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureCommunication.swift; sourceTree = "<group>"; };
 		EB982D6524267BC30080099D /* MeasureSchools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureSchools.swift; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 			path = PlaguePrevent;
 			sourceTree = "<group>";
 		};
+		EB7CCAD72426849D00786B4D /* Simulation */ = {
+			isa = PBXGroup;
+			children = (
+				EB7CCAD52426849800786B4D /* Simulation.swift */,
+			);
+			path = Simulation;
+			sourceTree = "<group>";
+		};
 		EBD2B2C52425884100D37B6B /* Game ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		EBDFEC12242637D100C896FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB7CCAD72426849D00786B4D /* Simulation */,
 				EB745E62242573C6005280BB /* Measure.swift */,
 				EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */,
 				EBDFEC10242637CD00C896FC /* MeasurePackage.swift */,
@@ -412,6 +423,7 @@
 				EBDFEC0F242634AF00C896FC /* PopupDialogContainerView.swift in Sources */,
 				EBDFEC06242634AF00C896FC /* PopupDialogOverlayView.swift in Sources */,
 				EBDFEC03242634AF00C896FC /* PopupDialogDefaultView.swift in Sources */,
+				EB7CCAD62426849800786B4D /* Simulation.swift in Sources */,
 				EBDFEC0A242634AF00C896FC /* PopupDialog+Keyboard.swift in Sources */,
 				EB982D6C24267BE90080099D /* MeasureAusgangssperre.swift in Sources */,
 				EB390DAB24264B6B0009CEB0 /* BarView.swift in Sources */,
