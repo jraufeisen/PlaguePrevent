@@ -40,6 +40,12 @@ enum MeasureEffectiveness : MeasureDescription {
     func infoText() -> String {
         return "Mit diesem Regler veränderst du die Stärke deiner Maßnahmen. Bedenke,dass Maßnahmen angemessen sein müssen, da Sie sonst die Moral negativ beeinflussen können"
     }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Maßnahmenintensität-Small")
+    }
+    func largeLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Maßnahmenintensität")
+    }
 }
 
 enum MeasureTypeBorder : MeasureDescription {
@@ -57,6 +63,9 @@ enum MeasureTypeBorder : MeasureDescription {
         case .noTourists: return "Nur Waren- und Berufsverkehr. Keine Touristen"
         case .open: return "Komplett offen"
         }
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Grenzpolitik-Small")
     }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Grenzpolitik")
@@ -78,6 +87,9 @@ enum MeasureTypeSchools : MeasureDescription{
         case .open: return "Geöffnet"
         case .closed: return "Geschlossen"
         }
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Öffentliche Einrichtungen-Small")
     }
     func largeLogo() -> UIImage {
        return #imageLiteral(resourceName: "Öffentliche Einrichtungen.jpg")
@@ -105,6 +117,9 @@ enum MeasureTypeTraffic : MeasureDescription{
         case .noRestriction: return "Keine Einschränkungen"
         }
     }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Reisebeschränkungen-Small")
+    }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Reisebeschränkungen.jpg")
     }
@@ -126,6 +141,9 @@ enum MeasureTypeWork : MeasureDescription{
         case .homeOfficeWherePossible: return "HomeOffice wenn möglich"
         case .asUsual: return "Normalbetrieb"
         }
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Arbeit-Small")
     }
     func largeLogo() -> UIImage {
        return #imageLiteral(resourceName: "Arbeit.jpg")
@@ -149,6 +167,9 @@ enum MeasureTypeAusgangssperre : MeasureDescription{
         case .sperrstunden: return "Einige Sperrstunden"
         }
     }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Ausgangssperre-Small")
+    }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Ausgangssperre.jpg")
     }
@@ -170,6 +191,9 @@ enum MeasureTypeBusinesses : MeasureDescription{
         case .restrictedClosingHours: return "Verkürzte Öffnungszeiten"
         case .businessAsUsual: return "Normalbetrieb"
         }
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Öffentliche Versorgung-Small")
     }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Öffentliche Versorgung.jpg")
@@ -195,6 +219,9 @@ enum MeasureTypeCommunication : MeasureDescription{
         case .calmingTransparency: return "Bevölkerung beruhigen"
         case .fullTransparency: return "Volle Transparenz"
         }
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Kommunikation-Small")
     }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Kommunikation.jpg")
@@ -222,6 +249,9 @@ class ScienceMeasure: Measure, MeasureDescription{
     func longDescription() -> String {
         return "\(money)€ in Forschung investieren"
     }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Forschungsgelder-Small")
+    }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Forschungsgelder.jpg")
     }
@@ -243,6 +273,9 @@ class HealthServicesMeasure: Measure, MeasureDescription {
     func longDescription() -> String {
         return "\(money)€ in das Gesundheitssystem investieren"
     }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Gesundheitsbudget-Small")
+    }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Gesundheitsbudget.jpg")
     }
@@ -263,6 +296,9 @@ class EconomicHelpMeasure: Measure, MeasureDescription {
     }
     func longDescription() -> String {
         return "\(money)€ in wirtschaftliche Hilfe investieren"
+    }
+    func smallLogo() -> UIImage {
+        return #imageLiteral(resourceName: "Wirtschaftshilfen")
     }
     func largeLogo() -> UIImage {
        return  #imageLiteral(resourceName: "Wirtschaftshilfe.jpg")

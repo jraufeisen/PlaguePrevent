@@ -60,7 +60,7 @@ extension GameViewController: UICollectionViewDataSource {
         cell.textLabel.text = measure.shortTitle()
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.main.scale
-        cell.imageView.image = measure.titleImage()
+        cell.imageView.image = measure.smallLogo()
         return cell
     }
     
