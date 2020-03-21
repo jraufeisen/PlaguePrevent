@@ -1,0 +1,6 @@
+framework module Pods_PlaguePrevent {
+  umbrella header "Pods-PlaguePrevent-umbrella.h"
+
+  export *
+  module * { export * }
+}

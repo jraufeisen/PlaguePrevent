@@ -3,27 +3,81 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21035550F24B8CDBBBCC60F0 /* Pods_PlaguePrevent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
-		EB745E5324257361005280BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* ViewController.swift */; };
+		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
 		EB745E5624257361005280BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5424257361005280BB /* Main.storyboard */; };
 		EB745E5824257364005280BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5724257364005280BB /* Assets.xcassets */; };
 		EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5924257364005280BB /* LaunchScreen.storyboard */; };
+		EB745E63242573C6005280BB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E62242573C6005280BB /* Measure.swift */; };
+		EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */; };
+		EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */; };
+		EBB04BDE2425945700BB2794 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */; };
+		EBB04BDF242596C900BB2794 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */; };
+		EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBEC242634A000C896FC /* InteractiveTransition.swift */; };
+		EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBED242634A000C896FC /* PresentationController.swift */; };
+		EBDFEC01242634AF00C896FC /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBEE242634A000C896FC /* UIImageView+Calculations.swift */; };
+		EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBEF242634A000C896FC /* UIView+Animations.swift */; };
+		EBDFEC03242634AF00C896FC /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF0242634A000C896FC /* PopupDialogDefaultView.swift */; };
+		EBDFEC04242634AF00C896FC /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF1242634A000C896FC /* PopupDialog.swift */; };
+		EBDFEC05242634AF00C896FC /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EBDFEBF2242634A000C896FC /* .gitkeep */; };
+		EBDFEC06242634AF00C896FC /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF3242634A000C896FC /* PopupDialogOverlayView.swift */; };
+		EBDFEC07242634AF00C896FC /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF4242634A000C896FC /* PopupDialogButton.swift */; };
+		EBDFEC08242634AF00C896FC /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF5242634A000C896FC /* UIViewController+Visibility.swift */; };
+		EBDFEC09242634AF00C896FC /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF6242634A000C896FC /* TransitionAnimator.swift */; };
+		EBDFEC0A242634AF00C896FC /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF7242634A000C896FC /* PopupDialog+Keyboard.swift */; };
+		EBDFEC0B242634AF00C896FC /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF8242634A000C896FC /* PopupDialogDefaultViewController.swift */; };
+		EBDFEC0C242634AF00C896FC /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBF9242634A000C896FC /* TransitionAnimations.swift */; };
+		EBDFEC0D242634AF00C896FC /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBFA242634A000C896FC /* PopupDialogDefaultButtons.swift */; };
+		EBDFEC0E242634AF00C896FC /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBFB242634A000C896FC /* PresentationManager.swift */; };
+		EBDFEC0F242634AF00C896FC /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEBFC242634A000C896FC /* PopupDialogContainerView.swift */; };
+		EBDFEC13242637F700C896FC /* MeasurePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEC10242637CD00C896FC /* MeasurePackage.swift */; };
+		EBDFEC1524263CB700C896FC /* MeasureTypeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEC1424263CB700C896FC /* MeasureTypeBorder.swift */; };
+		EBDFEC1B24263DE700C896FC /* DefaultMeasureDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		005E7FDAAC8523FE606472A1 /* Pods-PlaguePrevent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaguePrevent.debug.xcconfig"; path = "Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent.debug.xcconfig"; sourceTree = "<group>"; };
+		1FE97EC5A2A2A1A5C20BA1CB /* Pods-PlaguePrevent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaguePrevent.release.xcconfig"; path = "Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent.release.xcconfig"; sourceTree = "<group>"; };
+		221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaguePrevent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB745E5224257361005280BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB745E5224257361005280BB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EB745E5524257361005280BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB745E5724257364005280BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB745E5A24257364005280BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB745E5C24257364005280BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB745E62242573C6005280BB /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuresCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasuresCollectionViewCell.xib; sourceTree = "<group>"; };
+		EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeaderCollectionReusableView.swift; path = "/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.swift"; sourceTree = "<absolute>"; };
+		EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = "/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.xib"; sourceTree = "<absolute>"; };
+		EBDFEBEC242634A000C896FC /* InteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		EBDFEBED242634A000C896FC /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		EBDFEBEE242634A000C896FC /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		EBDFEBEF242634A000C896FC /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		EBDFEBF0242634A000C896FC /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		EBDFEBF1242634A000C896FC /* PopupDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		EBDFEBF2242634A000C896FC /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		EBDFEBF3242634A000C896FC /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		EBDFEBF4242634A000C896FC /* PopupDialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		EBDFEBF5242634A000C896FC /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
+		EBDFEBF6242634A000C896FC /* TransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		EBDFEBF7242634A000C896FC /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		EBDFEBF8242634A000C896FC /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		EBDFEBF9242634A000C896FC /* TransitionAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		EBDFEBFA242634A000C896FC /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		EBDFEBFB242634A000C896FC /* PresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		EBDFEBFC242634A000C896FC /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		EBDFEC10242637CD00C896FC /* MeasurePackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurePackage.swift; sourceTree = "<group>"; };
+		EBDFEC1424263CB700C896FC /* MeasureTypeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTypeBorder.swift; sourceTree = "<group>"; };
+		EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMeasureDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +85,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21035550F24B8CDBBBCC60F0 /* Pods_PlaguePrevent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8278BB43747297C8B4363492 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2B4FAD1786186540C450A31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				005E7FDAAC8523FE606472A1 /* Pods-PlaguePrevent.debug.xcconfig */,
+				1FE97EC5A2A2A1A5C20BA1CB /* Pods-PlaguePrevent.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB745E4224257361005280BB = {
 			isa = PBXGroup;
 			children = (
+				EBDFEBEA242634A000C896FC /* PopupDialog */,
 				EB745E4D24257361005280BB /* PlaguePrevent */,
 				EB745E4C24257361005280BB /* Products */,
+				A2B4FAD1786186540C450A31 /* Pods */,
+				8278BB43747297C8B4363492 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +131,71 @@
 		EB745E4D24257361005280BB /* PlaguePrevent */ = {
 			isa = PBXGroup;
 			children = (
+				EBDFEC12242637D100C896FC /* Model */,
 				EB745E4E24257361005280BB /* AppDelegate.swift */,
 				EB745E5024257361005280BB /* SceneDelegate.swift */,
-				EB745E5224257361005280BB /* ViewController.swift */,
 				EB745E5424257361005280BB /* Main.storyboard */,
+				EBD2B2C52425884100D37B6B /* Game ViewController */,
 				EB745E5724257364005280BB /* Assets.xcassets */,
 				EB745E5924257364005280BB /* LaunchScreen.storyboard */,
 				EB745E5C24257364005280BB /* Info.plist */,
 			);
 			path = PlaguePrevent;
+			sourceTree = "<group>";
+		};
+		EBD2B2C52425884100D37B6B /* Game ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB745E5224257361005280BB /* GameViewController.swift */,
+				EBB04BDC2425945600BB2794 /* HeaderCollectionReusableView.swift */,
+				EBB04BDD2425945600BB2794 /* HeaderCollectionReusableView.xib */,
+				EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */,
+				EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */,
+			);
+			path = "Game ViewController";
+			sourceTree = "<group>";
+		};
+		EBDFEBEA242634A000C896FC /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				EBDFEBEB242634A000C896FC /* Classes */,
+			);
+			path = PopupDialog;
+			sourceTree = "<group>";
+		};
+		EBDFEBEB242634A000C896FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EBDFEBEC242634A000C896FC /* InteractiveTransition.swift */,
+				EBDFEBED242634A000C896FC /* PresentationController.swift */,
+				EBDFEBEE242634A000C896FC /* UIImageView+Calculations.swift */,
+				EBDFEBEF242634A000C896FC /* UIView+Animations.swift */,
+				EBDFEBF0242634A000C896FC /* PopupDialogDefaultView.swift */,
+				EBDFEBF1242634A000C896FC /* PopupDialog.swift */,
+				EBDFEBF2242634A000C896FC /* .gitkeep */,
+				EBDFEBF3242634A000C896FC /* PopupDialogOverlayView.swift */,
+				EBDFEBF4242634A000C896FC /* PopupDialogButton.swift */,
+				EBDFEBF5242634A000C896FC /* UIViewController+Visibility.swift */,
+				EBDFEBF6242634A000C896FC /* TransitionAnimator.swift */,
+				EBDFEBF7242634A000C896FC /* PopupDialog+Keyboard.swift */,
+				EBDFEBF8242634A000C896FC /* PopupDialogDefaultViewController.swift */,
+				EBDFEBF9242634A000C896FC /* TransitionAnimations.swift */,
+				EBDFEBFA242634A000C896FC /* PopupDialogDefaultButtons.swift */,
+				EBDFEBFB242634A000C896FC /* PresentationManager.swift */,
+				EBDFEBFC242634A000C896FC /* PopupDialogContainerView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EBDFEC12242637D100C896FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB745E62242573C6005280BB /* Measure.swift */,
+				EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */,
+				EBDFEC10242637CD00C896FC /* MeasurePackage.swift */,
+				EBDFEC1424263CB700C896FC /* MeasureTypeBorder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB745E5F24257364005280BB /* Build configuration list for PBXNativeTarget "PlaguePrevent" */;
 			buildPhases = (
+				93BB5FD48535E2A092E1DF93 /* [CP] Check Pods Manifest.lock */,
 				EB745E4724257361005280BB /* Sources */,
 				EB745E4824257361005280BB /* Frameworks */,
 				EB745E4924257361005280BB /* Resources */,
+				440741F640B74EC54B640478 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +259,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
+				EBB04BDF242596C900BB2794 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
+				EBDFEC05242634AF00C896FC /* .gitkeep in Resources */,
+				EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */,
 				EB745E5624257361005280BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		440741F640B74EC54B640478 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93BB5FD48535E2A092E1DF93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaguePrevent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB745E4724257361005280BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB745E5324257361005280BB /* ViewController.swift in Sources */,
+				EBB04BDE2425945700BB2794 /* HeaderCollectionReusableView.swift in Sources */,
+				EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */,
+				EB745E5324257361005280BB /* GameViewController.swift in Sources */,
+				EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */,
+				EBDFEC1524263CB700C896FC /* MeasureTypeBorder.swift in Sources */,
+				EBDFEC04242634AF00C896FC /* PopupDialog.swift in Sources */,
+				EBDFEC1B24263DE700C896FC /* DefaultMeasureDescription.swift in Sources */,
+				EBDFEC01242634AF00C896FC /* UIImageView+Calculations.swift in Sources */,
+				EBDFEC0D242634AF00C896FC /* PopupDialogDefaultButtons.swift in Sources */,
+				EBDFEC13242637F700C896FC /* MeasurePackage.swift in Sources */,
+				EBDFEC07242634AF00C896FC /* PopupDialogButton.swift in Sources */,
+				EBDFEC0B242634AF00C896FC /* PopupDialogDefaultViewController.swift in Sources */,
+				EBDFEC0C242634AF00C896FC /* TransitionAnimations.swift in Sources */,
+				EBDFEC0E242634AF00C896FC /* PresentationManager.swift in Sources */,
+				EBDFEC0F242634AF00C896FC /* PopupDialogContainerView.swift in Sources */,
+				EBDFEC06242634AF00C896FC /* PopupDialogOverlayView.swift in Sources */,
+				EBDFEC03242634AF00C896FC /* PopupDialogDefaultView.swift in Sources */,
+				EBDFEC0A242634AF00C896FC /* PopupDialog+Keyboard.swift in Sources */,
+				EBDFEC09242634AF00C896FC /* TransitionAnimator.swift in Sources */,
 				EB745E4F24257361005280BB /* AppDelegate.swift in Sources */,
+				EB745E63242573C6005280BB /* Measure.swift in Sources */,
+				EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */,
 				EB745E5124257361005280BB /* SceneDelegate.swift in Sources */,
+				EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */,
+				EBDFEC08242634AF00C896FC /* UIViewController+Visibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +482,12 @@
 		};
 		EB745E6024257364005280BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 005E7FDAAC8523FE606472A1 /* Pods-PlaguePrevent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AC22FCKD7F;
+				DEVELOPMENT_TEAM = YLJFWRHN2U;
 				INFOPLIST_FILE = PlaguePrevent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,6 +495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jraufeisen.PlaguePrevent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,10 +503,12 @@
 		};
 		EB745E6124257364005280BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FE97EC5A2A2A1A5C20BA1CB /* Pods-PlaguePrevent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AC22FCKD7F;
+				DEVELOPMENT_TEAM = YLJFWRHN2U;
 				INFOPLIST_FILE = PlaguePrevent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jraufeisen.PlaguePrevent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
