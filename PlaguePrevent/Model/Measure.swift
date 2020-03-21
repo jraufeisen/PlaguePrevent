@@ -80,7 +80,7 @@ enum MeasureTypeSchools : MeasureDescription{
         }
     }
     func largeLogo() -> UIImage {
-       return  #imageLiteral(resourceName: "Öffentliche Einrichtungen.jpg")
+       return #imageLiteral(resourceName: "Öffentliche Einrichtungen.jpg")
     }
     func infoText() -> String {
         return "Öffentliche Einrichtungen sind Orte großer Versammlungen und somit leichte Infektionsmultiplikatoren"

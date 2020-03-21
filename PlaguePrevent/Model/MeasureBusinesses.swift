@@ -12,6 +12,7 @@ import Foundation
 
 extension MeasureTypeBusinesses {
     func popUp() -> PopupDialog {
+        
         let popup = PopupDialog(title: MeasureTypeBusinesses.businessAsUsual.shortTitle(), message: MeasureTypeBusinesses.businessAsUsual.infoText(), image: MeasureTypeBusinesses.businessAsUsual.largeLogo())
         let buttonOne = CancelButton(title: MeasureTypeBusinesses.businessAsUsual.longDescription()) {
 
@@ -22,7 +23,6 @@ extension MeasureTypeBusinesses {
         let buttonThree = CancelButton(title: MeasureTypeBusinesses.supermarketOnly.longDescription()) {
 
         }
-
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
         popup.transitionStyle = .bounceUp
         
