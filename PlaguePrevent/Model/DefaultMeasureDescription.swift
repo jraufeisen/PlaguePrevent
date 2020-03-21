@@ -19,7 +19,7 @@ extension MeasureDescription {
     func titleImage() -> UIImage {
         return #imageLiteral(resourceName: "Bag")
     }
-    func popUp() -> PopupDialog {
+    func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         // Create the dialog
         let popup = PopupDialog(title: "Border", message: "Change your border policy", image: #imageLiteral(resourceName: "nyc.jpg") , preferredWidth: 100)
 

@@ -8,11 +8,26 @@
 
 import UIKit
 
+protocol ChangeMeasuresDelegate {
+    func didChangeEffectiveness(state: MeasureEffectiveness)
+    func didChangeBorder(state: MeasureTypeBorder)
+    func didChangeSchools(state: MeasureTypeSchools)
+    func didChangeTraffic(state: MeasureTypeTraffic)
+    func didChangeWork(state: MeasureTypeWork)
+    func didChangeAusgangssperre(state: MeasureTypeAusgangssperre)
+    func didChangeBusinesses(state: MeasureTypeBusinesses)
+    func didChangeCommunication(state: MeasureTypeCommunication)
+    func didChangeScience(state: ScienceMeasure)
+    func didChangeHealth(state: HealthServicesMeasure)
+    func didChangeEconomics(state: EconomicHelpMeasure)
+}
+
+
 protocol MeasureDescription {
     func shortTitle() -> String
     func longDescription() -> String
     func titleImage() -> UIImage
-    func popUp() -> PopupDialog
+    func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog
     func smallLogo() -> UIImage
     func largeLogo() -> UIImage
     func infoText() -> String

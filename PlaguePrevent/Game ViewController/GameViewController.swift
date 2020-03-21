@@ -106,7 +106,7 @@ extension GameViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let measure = measurePackage.allMeasures()[indexPath.row]
-        let popup = measure.popUp()
+        let popup = measure.popUp(delegate: self)
         present(popup, animated: true, completion: nil)
     }
     
@@ -121,3 +121,53 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+// MARK: - Change measures
+
+extension GameViewController: ChangeMeasuresDelegate {
+    func didChangeEffectiveness(state: MeasureEffectiveness) {
+        
+    }
+    
+    func didChangeBorder(state: MeasureTypeBorder) {
+        
+    }
+    
+    func didChangeSchools(state: MeasureTypeSchools) {
+        
+    }
+    
+    func didChangeTraffic(state: MeasureTypeTraffic) {
+        
+    }
+    
+    func didChangeWork(state: MeasureTypeWork) {
+        
+    }
+    
+    func didChangeAusgangssperre(state: MeasureTypeAusgangssperre) {
+        
+    }
+    
+    func didChangeBusinesses(state: MeasureTypeBusinesses) {
+        
+    }
+    
+    func didChangeCommunication(state: MeasureTypeCommunication) {
+        
+    }
+    
+    func didChangeScience(state: ScienceMeasure) {
+        
+    }
+    
+    func didChangeHealth(state: HealthServicesMeasure) {
+        
+    }
+    
+    func didChangeEconomics(state: EconomicHelpMeasure) {
+        
+    }
+    
+    
+}

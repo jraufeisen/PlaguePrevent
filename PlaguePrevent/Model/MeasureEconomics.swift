@@ -10,7 +10,7 @@ import Foundation
 
 extension EconomicHelpMeasure {
 
-    func popUp() -> PopupDialog {
+    func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         
         let science = EconomicHelpMeasure.init(money: 0)
 
@@ -25,12 +25,14 @@ extension EconomicHelpMeasure {
                                 tapGestureDismissal: true,
                                 panGestureDismissal: true)
         
-        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+        let buttonOne = CancelButton(title: "Cancel", height: 60) {
 
         }
-
-        let buttonTwo = DefaultButton(title: "RATE", height: 60) {
-
+        
+        let buttonTwo = DefaultButton(title: "Save", height: 60) {
+            let moneyString = moneyVC.textField.text ?? ""
+            let enteredMoney = Int(moneyString) ?? 0
+            delegate.didChangeEconomics(state: EconomicHelpMeasure.init(money: enteredMoney))
         }
         popup.addButtons([buttonOne, buttonTwo])
         

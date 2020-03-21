@@ -10,16 +10,16 @@ import Foundation
 
 extension MeasureEffectiveness {
 
-    func popUp() -> PopupDialog {
+    func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         let popup = PopupDialog(title: MeasureEffectiveness.voluntarily.shortTitle(), message: MeasureEffectiveness.voluntarily.infoText(), image: MeasureEffectiveness.voluntarily.largeLogo())
         let buttonOne = CancelButton(title: MeasureEffectiveness.voluntarily.longDescription()) {
-
+            delegate.didChangeEffectiveness(state: .voluntarily)
         }
         let buttonTwo = CancelButton(title: MeasureEffectiveness.enforcedByPolice.longDescription()) {
-
+            delegate.didChangeEffectiveness(state: .enforcedByPolice)
         }
         let buttonThree = CancelButton(title: MeasureEffectiveness.enforcedByMilitary.longDescription()) {
-
+            delegate.didChangeEffectiveness(state: .enforcedByMilitary)
         }
 
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
