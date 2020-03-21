@@ -8,14 +8,27 @@
 
 import UIKit
 
+enum BarOrientation: Int {
+    case vertical /// bot to top fill
+    case horizontal /// left to right fill
+}
+
+@IBDesignable
 class BarView: UIView {
 
-    var cornerRadius = 7 {
+    @IBInspectable var cornerRadius = 7 {
         didSet {
             updateFill()
         }
     }
-    var fillPercent: CGFloat = 0.8 {
+    
+    @IBInspectable var fillPercent: CGFloat = 0.5 {
+        didSet {
+            updateFill()
+        }
+    }
+    
+    var orientation: BarOrientation = .vertical {
         didSet {
             updateFill()
         }
@@ -25,10 +38,23 @@ class BarView: UIView {
         updateFill()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        updateFill()
+    }
+    
     private func updateFill() {
-        let fillHeight = bounds.height * fillPercent
-        let maskRect = CGRect.init(x: bounds.origin.x, y: bounds.size.height - fillHeight, width: bounds.size.width, height: fillHeight)
-        layer.round(roundedRect: maskRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        switch orientation {
+        case .vertical:
+            let fillHeight = bounds.height * fillPercent
+            let maskRect = CGRect.init(x: bounds.origin.x, y: bounds.size.height - fillHeight, width: bounds.size.width, height: fillHeight)
+            layer.round(roundedRect: maskRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        case .horizontal:
+            let fillWidth = bounds.width * fillPercent
+            let maskRect = CGRect.init(x: bounds.origin.x , y: bounds.origin.y, width: fillWidth, height: bounds.size.height)
+            layer.round(roundedRect: maskRect, byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+
+        }
     }
 
 }

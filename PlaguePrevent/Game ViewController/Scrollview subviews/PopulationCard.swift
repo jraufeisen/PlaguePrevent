@@ -11,10 +11,10 @@ import UIKit
 class PopulationCard: UIView {
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet var moralBarView: BarView!
-    @IBOutlet var budgetBarView: BarView!
-    @IBOutlet var hospitalBarView: BarView!
-
+    @IBOutlet weak var moralBarView: BarView!
+    @IBOutlet weak var hospitalBarView: BarView!
+    @IBOutlet weak var budgetBarView: BarView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -36,6 +36,9 @@ class PopulationCard: UIView {
             contentView.backgroundColor = UIColor.white
         }
 
+        moralBarView.orientation = .horizontal
+        hospitalBarView.orientation = .horizontal
+        budgetBarView.orientation = .horizontal
     }
 
 }
