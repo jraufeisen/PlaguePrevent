@@ -43,7 +43,7 @@ struct GesuchteWerte {
 
 class Simulation {
     
-    typealias SimulationsFunktion = (Double, GesuchteWerte)->GesuchteWerte
+    typealias SimulationsFunktion = (Double, GesuchteWerte, MeasurePackage)->GesuchteWerte
     
 
     private var dx = 0.1 /// Simluation step size
@@ -56,11 +56,11 @@ class Simulation {
     }
     
     // Runge Kutta Algorithm of 4th order
-    private func rk4(dx: Double, x: Double, y: GesuchteWerte, f: SimulationsFunktion) -> GesuchteWerte {
-        let k1 = dx * f(x, y)
-        let k2 = dx * f(x + dx / 2, y + k1 / 2)
-        let k3 = dx * f(x + dx / 2, y + k2 / 2)
-        let k4 = dx * f(x + dx, y + k3)
+    private func rk4(dx: Double, x: Double, y: GesuchteWerte, measures: MeasurePackage, f: SimulationsFunktion) -> GesuchteWerte {
+        let k1 = dx * f(x, y, measures)
+        let k2 = dx * f(x + dx / 2, y + k1 / 2, measures)
+        let k3 = dx * f(x + dx / 2, y + k2 / 2, measures)
+        let k4 = dx * f(x + dx, y + k3, measures)
         return y + (k1 + 2 * k2 + 2 * k3 + k4) / 6
     }
 
@@ -75,7 +75,53 @@ class Simulation {
     var risk_h: Double = 0.03; // Ansteckungsrisiko einer genesenen Person
 
     
-    private func simulationStep(t: Double, y: GesuchteWerte) -> GesuchteWerte {
+    let operating_cost_health = 10000 // Laufende Ausgaben fuer ein Krankenbett
+    let capital_cost_health = 40000000 // Kapitalkosten fuer ein Krankenbett
+
+    
+    
+    private func simulationStep(t: Double, y: GesuchteWerte, measures: MeasurePackage = MeasurePackage()) -> GesuchteWerte {
+        let health_cost = Double(measures.health.money) // Ausgaben fuer Gesundheitssystem
+        let research_cost = Double(measures.science.money);// Ausgaben fuer Forschung
+        let fiscal_support = Double(measures.economicHelps.money) // Wirtschaftshilfen des Staates - Sozialismus
+        let GDP = 2000000000000;
+
+        var grenzschutz = 1.15
+        var fernverkehr = 1.1
+        var nahverkehr = 1.1
+        var arbeit = 1.1
+        var ausgang = 1.1
+        var geschaefte = 0.5
+        
+        // Now take into account the measures
+        switch measures.border {
+        case .open: grenzschutz = 1
+        case .noTourists: grenzschutz = 1.05
+        case .goodsOnly: grenzschutz = 1.15
+        case .closed: grenzschutz = 2
+        }
+        
+        switch measures.ausgangssperre {
+        case .active: ausgang = 2
+        case .inactive: ausgang = 1
+        case .sperrstunden: ausgang = 1.5
+        }
+        
+        switch measures.work {
+        case .asUsual: arbeit = 1
+        case .homeOfficeWherePossible: arbeit = 1.1
+        case .homeOfficeEverywhere: arbeit = 2
+        }
+        
+        switch measures.business {
+        case .supermarketOnly: geschaefte = 0
+        case .restrictedClosingHours: geschaefte = 0.25
+        case .businessAsUsual: geschaefte = 0
+        }
+        
+
+        
+        
         let part1 = -(Ki * y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert ))
         let part2 = Kg*risk_g*y.n_gesund
         let f_gesund = part1 * part2
@@ -104,7 +150,7 @@ class Simulation {
         var y_values = [GesuchteWerte]()
         y_values.append(anfangswerte)
         for i in 1...n_steps {
-            let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], f: simulationStep )
+            let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], measures: MeasurePackage(), f: simulationStep )
             y_values.append(newValue)
         }
         
@@ -114,7 +160,7 @@ class Simulation {
     // Call this repeatedly to advance the simulation
     func simulateNextStep() {
         let i = y_values.count
-        let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], f: simulationStep )
+        let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], measures: MeasurePackage(), f: simulationStep )
         y_values.append(newValue)
     }
  
