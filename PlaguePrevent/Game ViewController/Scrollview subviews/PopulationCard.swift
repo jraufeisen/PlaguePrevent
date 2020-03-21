@@ -40,10 +40,6 @@ class PopulationCard: UIView {
         } else {
             contentView.backgroundColor = UIColor.white
         }
-
-        moralBarView.orientation = .horizontal
-        hospitalBarView.orientation = .horizontal
-        budgetBarView.orientation = .horizontal
     }
 
 }
