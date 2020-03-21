@@ -54,13 +54,14 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 
     func updatePageControl() {
         pageControl.numberOfPages = cards.count
-
+        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = pageIndex
     }
     
 }
 
 extension HeaderCollectionReusableView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
+        updatePageControl()
     }
 }
