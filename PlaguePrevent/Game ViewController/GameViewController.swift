@@ -41,7 +41,14 @@ class GameViewController: UIViewController {
     
     private func updateUI() {
         guard let latestValue = simulation?.currentValue() else {return}
-        header?.bigLabel.text = "\(Int(latestValue.n_infiziert))"
+        let infected = latestValue.n_infiziert
+        let deaths = latestValue.n_gefallen
+        let recovered = latestValue.n_genesen
+        header?.bigLabel.text = "\(Int(infected))"
+        header?.casesCard?.deathsLabel.text = "\(Int(deaths)) deaths"
+        header?.casesCard?.recoveredLabel.text = "\(Int(recovered)) recovered"
+        header?.casesCard?.recoveredBarView.fillPercent = CGFloat(recovered/infected)
+        header?.casesCard?.deathsBarView.fillPercent = CGFloat(deaths/infected)
     }
     
 }
