@@ -13,8 +13,7 @@ class MeasurePackage: NSObject {
     var enforcement: MeasureEffectiveness = .voluntarily
     var border: MeasureTypeBorder = .open
     var school: MeasureTypeSchools = .open
-    var longDistanceTraffic: MeasureTypeLongDistanceTraffic = .open
-    var shortDistanceTraffic: MeasureTypeShortDistanceTraffic = .open
+    var traffic: MeasureTypeTraffic = .noRestriction
     var work: MeasureTypeWork = .asUsual
     var ausgangssperre: MeasureTypeAusgangssperre = .inactive
     var business: MeasureTypeBusinesses = .businessAsUsual
@@ -25,7 +24,7 @@ class MeasurePackage: NSObject {
     
     func allMeasures() -> [MeasureDescription] {
         return [
-            enforcement, border, school, longDistanceTraffic, shortDistanceTraffic, work, ausgangssperre, business, communication, science, health, economicHelps
+            enforcement, border, school, traffic, work, ausgangssperre, business, communication, science, health, economicHelps
         ]
     }
     
