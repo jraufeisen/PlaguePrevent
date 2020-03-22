@@ -34,12 +34,16 @@ class PopulationCard: UIView {
         Bundle.main.loadNibNamed("PopulationCard", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        //contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
         if #available(iOS 13.0, *) {
             contentView.backgroundColor = .systemBackground
         } else {
             contentView.backgroundColor = UIColor.white
         }
+        
+        moralBarView.fillPercent = 0
+        hospitalBarView.fillPercent = 0
+        budgetBarView.fillPercent = 0
     }
 
 }

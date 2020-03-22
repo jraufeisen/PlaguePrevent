@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
     private var measurePackage = MeasurePackage()
     private var simulation: Simulation?
     
-    private var tickerStayDuration: TimeInterval = 20.0
+    private var tickerStayDuration: TimeInterval = 30.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

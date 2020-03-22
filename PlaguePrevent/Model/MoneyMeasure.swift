@@ -62,6 +62,13 @@ enum MeasureEffectiveness : MeasureDescription {
     func largeLogo() -> UIImage {
         return #imageLiteral(resourceName: "Maßnahmenintensität")
     }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .voluntarily: return "Die Regierung hat beschlossen, dass die Maßnahmen freiwillig bleiben"
+        case .enforcedByPolice: return "Die Regierung hat beschlossen, dass die Maßnahmen verstärkt von der Polizei kontrolliert werden"
+        case .enforcedByMilitary: return "Die Regierung hat beschlossen, dass die Maßnahmen durch das Militär durchgesetzt werden"
+        }
+    }
 }
 
 enum MeasureTypeBorder : MeasureDescription {
@@ -89,6 +96,14 @@ enum MeasureTypeBorder : MeasureDescription {
     func infoText() -> String {
         return "Mit diesem Regler definierst du, wer deine Grenzen passieren darf. Bedenke, dass striktere Maßnahmen zu starken Staus und Warenengpässen führen können"
     }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .closed: return ""
+        case .goodsOnly: return "Die Staatsgrenzen sind nur noch für den Waren- und Berufsverkehr geöffnet"
+        case .noTourists: return "Touristen wird die Einreise von nun an verwehrt"
+        case .open: return ""
+        }
+    }
 }
 
 enum MeasureTypeSchools : MeasureDescription{
@@ -112,6 +127,12 @@ enum MeasureTypeSchools : MeasureDescription{
     }
     func infoText() -> String {
         return "Öffentliche Einrichtungen sind Orte großer Versammlungen und somit leichte Infektionsmultiplikatoren"
+    }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .open: return ""
+        case .closed: return "Um die Verbreitung des Virus einzudämmen wurde beschlossen Öffentliche Einrichtungen zu schließen"
+        }
     }
 }
 
@@ -142,6 +163,14 @@ enum MeasureTypeTraffic : MeasureDescription{
     func infoText() -> String {
         return "Diese Maßnahme schränkt, je nach stärke, die Bewegungsfreiheit deiner Bürger ein und hilft dabei eine Ausbreitung zu verlangsamen"
     }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .regionalOnly: return "Nur der Nahverkehr steht noch zur Verfügung"
+        case .restrictedLongDistance: return "Der Fernverkehr steht nur noch eingeschränkt zur Verfügung"
+        case .noFlights: return "Die Regierung hat beschlossen den Flugverkehr einzustellen"
+        case .noRestriction: return ""
+        }
+    }
 }
 
 enum MeasureTypeWork : MeasureDescription{
@@ -166,6 +195,13 @@ enum MeasureTypeWork : MeasureDescription{
     }
     func infoText() -> String {
         return "Arbeitsplätze sind Orte großer Versammlungen und somit leichte Infektionsmultiplikatoren"
+    }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .asUsual: return ""
+        case .homeOfficeWherePossible: return "Es wurde den UNternehmen angeraten auf Homeoffice umzustellen wenn dies möglich ist"
+        case .homeOfficeEverywhere: return "Von nun an werden nur noch Systemrelevante Berufe ausgeführt alle anderen Arbeitnehmer sollen zu Hause bleiben"
+        }
     }
 }
 
@@ -192,6 +228,13 @@ enum MeasureTypeAusgangssperre : MeasureDescription{
     func infoText() -> String {
         return "Ausgangssperren minimieren soziale Kontakte und somit das Risiko der Übertragung des Virus"
     }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .active: return "Heute wurden Ausgangssperren für alle Bürger erlassen"
+        case .sperrstunden: return "Seit Heute gelten zeitlich begrenzte Ausgangssperren, um Menschenansammlungen und damit Infektionsherde zu vermeiden"
+        case .inactive: return ""
+        }
+    }
 }
 
 enum MeasureTypeBusinesses : MeasureDescription{
@@ -216,6 +259,13 @@ enum MeasureTypeBusinesses : MeasureDescription{
     }
     func infoText() -> String {
         return "Die öffentliche Versorgung schließt alle Betriebe des alltäglichen Lebens ein. Von Kleidungen bis zu Krankenhäusern. Diese können bis auf die Grundversorgung heruntergefahren werden"
+    }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .supermarketOnly: return "Von nun an werden alle nicht lebensnotwendigen Einrichtungen geschlossen"
+        case .restrictedClosingHours: return "Nicht-Essentielle Einrichtungen wie Restaurants, Cafes werden von nun an mit verkürzten Öffnungszeiten operieren."
+        case .businessAsUsual: return ""
+        }
     }
 }
 
@@ -244,6 +294,14 @@ enum MeasureTypeCommunication : MeasureDescription{
     }
     func infoText() -> String {
         return "Die kommunikation entscheidet wie viele Informationen du freigibst und wie ehrlich du zur Bevölkerung bist"
+    }
+    func instantTickerFeedback() -> String {
+        switch self {
+        case .sayNothing: return "Die Regierung bestreitet die Existenz eines so genannten neuen Virus"
+        case .euphemistic: return "Die Regierung gibt sich zuversichtlich, dass die Krise ausgehend von dem neuen Virus bald überstanden sein wird"
+        case .calmingTransparency: return "Heute wurde von Regierungsseite bestätigt, dass ein neuer Virus entdeckt wurde, man sei jedoch gut auf alle Eventualitäten vorbereitet"
+        case .fullTransparency: return ""
+        }
     }
 }
 
@@ -274,6 +332,9 @@ class ScienceMeasure: Measure, MeasureDescription{
     func infoText() -> String {
         return "Je höher die Forschungsgelder desto intensiver wird geforscht. Beachte, dass dir die Mittel auch ausgehen können"
     }
+    func instantTickerFeedback() -> String {
+        return "Die Regierung investiert \(money)€ in die Entwicklung eines Impfstoffes"
+    }
 }
 
 // Invest X money in health services
@@ -297,6 +358,9 @@ class HealthServicesMeasure: Measure, MeasureDescription {
     }
     func infoText() -> String {
         return "Durch das Gesundheitsbudget werden Dinge wie Krankenhäuser und andere medizinische Einrichtungen beeinflusst. Beachte, dass dir die Mittel auch ausgehen können"
+    }
+    func instantTickerFeedback() -> String {
+        return "Die Regierung investiert \(money)€ in das Gesundheitssystem"
     }
 }
 
@@ -322,4 +386,8 @@ class EconomicHelpMeasure: Measure, MeasureDescription {
     func infoText() -> String {
         return "Unternehmen leiden unter einer eingeschränkten Gesellschaft, somit können unter anderem arbeitsplätze verloren gehen. Wirtschaftshilfen arbeiten dagegen an. Beachte, dass dir die Mittel auch ausgehen können"
     }
+    func instantTickerFeedback() -> String {
+        return "Die Regierung stellt der Wirtschaft \(money)€ zur Verfügung"
+    }
+
 }

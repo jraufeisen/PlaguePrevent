@@ -31,13 +31,15 @@ class CasesCard: UIView {
         Bundle.main.loadNibNamed("CasesCard", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        //contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
         if #available(iOS 13.0, *) {
             contentView.backgroundColor = .systemBackground
         } else {
             contentView.backgroundColor = UIColor.white
         }
 
+        deathsBarView.fillPercent = 0
+        recoveredBarView.fillPercent = 0
     }
 
 }
