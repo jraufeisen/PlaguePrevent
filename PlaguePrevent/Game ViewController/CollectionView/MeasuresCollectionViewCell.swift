@@ -18,6 +18,9 @@ class MeasuresCollectionViewCell: UICollectionViewCell {
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 2
         contentView.layer.cornerRadius = 10
+        
+
+        
     }
 
 }

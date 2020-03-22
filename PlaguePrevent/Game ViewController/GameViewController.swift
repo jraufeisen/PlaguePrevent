@@ -67,7 +67,16 @@ extension GameViewController: UICollectionViewDataSource {
         cell.textLabel.text = measure.shortTitle()
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.main.scale
-        cell.imageView.image = measure.smallLogo()
+        
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            cell.imageView.image = measure.smallLogo().withTintColor(.white)
+        case .light:
+            cell.imageView.image = measure.smallLogo()
+        default:
+            print("UI Warning: Unrecognized user trait")
+        }
+        
         return cell
     }
     
@@ -169,5 +178,16 @@ extension GameViewController: ChangeMeasuresDelegate {
         measurePackage.economicHelps = state
     }
     
+    
+}
+
+// MARK: - Adopt Dark Mode
+
+extension GameViewController {
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        updateUI()
+        measuresCollectionView.reloadData()
+    }
     
 }

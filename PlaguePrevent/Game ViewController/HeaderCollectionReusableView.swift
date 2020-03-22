@@ -15,6 +15,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bigLabel: UILabel!
     @IBOutlet weak var smallLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     private var cards = [UIView]()
     
@@ -23,7 +24,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     var liveTickerMessages = [String]() {
         didSet {
-            topLabel.text = liveTickerMessages.joined(separator: " +++ ")
+            topLabel.text = liveTickerMessages.joined(separator: " +++ ") + " +++ "
         }
     }
     
@@ -38,6 +39,11 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         topLabel.animationCurve = .linear
         topLabel.fadeLength = 0
         topLabel.restartLabel()
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            imageView.image = imageView.image?.withTintColor(.white)
+        }
+
     }
     
 

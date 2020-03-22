@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let y = infected[i]
             text += "\(y)\n"
         }
-        print(text)
+        //print(text)
         // Override point for customization after application launch.
         return true
     }
