@@ -25,18 +25,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Rdf-w4-9Dw"/>
                                 </connections>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-VN-su9">
+                                <rect key="frame" x="350" y="65" width="44" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Oh-dj-gHR"/>
+                                    <constraint firstAttribute="width" constant="44" id="fcM-pg-5AA"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="chart.bar" catalog="system"/>
+                                <connections>
+                                    <segue destination="XOO-bJ-PP4" kind="presentation" id="33F-M5-mfY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eUs-fA-fpz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DLp-v2-ycg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUs-fA-fpz" secondAttribute="trailing" constant="20" id="XYZ-nW-xCG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Hs-VN-su9" secondAttribute="trailing" constant="20" id="aOo-Vi-Dzb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eUs-fA-fpz" secondAttribute="bottom" id="fxj-dm-w2M"/>
+                            <constraint firstItem="7Hs-VN-su9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gJE-4s-xPx"/>
                             <constraint firstItem="eUs-fA-fpz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uOm-ms-ovn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="measuresCollectionView" destination="eUs-fA-fpz" id="hCV-z2-hXA"/>
+                        <outlet property="statsButton" destination="7Hs-VN-su9" id="avV-tO-XGv"/>
                         <outlet property="stickySplitLayout" destination="CQi-bt-6Ku" id="kXk-hw-E8b"/>
                     </connections>
                 </viewController>
@@ -44,5 +58,42 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
         </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="skb-me-f6x">
+            <objects>
+                <viewController id="XOO-bJ-PP4" customClass="StatsViewController" customModule="PlaguePrevent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMT-KT-Lbq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Hp-Gd-uhT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XOO-bJ-PP4" id="RC6-h1-fkK"/>
+                                    <outlet property="delegate" destination="XOO-bJ-PP4" id="eSt-9f-VJg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x7Q-zO-064" firstAttribute="trailing" secondItem="5Hp-Gd-uhT" secondAttribute="trailing" id="2zH-d2-8ll"/>
+                            <constraint firstItem="5Hp-Gd-uhT" firstAttribute="top" secondItem="x7Q-zO-064" secondAttribute="top" id="HpW-eB-S2I"/>
+                            <constraint firstItem="5Hp-Gd-uhT" firstAttribute="leading" secondItem="x7Q-zO-064" secondAttribute="leading" id="qCN-pw-5is"/>
+                            <constraint firstItem="5Hp-Gd-uhT" firstAttribute="bottom" secondItem="x7Q-zO-064" secondAttribute="bottom" constant="34" id="zYA-82-qcX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x7Q-zO-064"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5Hp-Gd-uhT" id="GSe-aa-XOM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87k-5e-st1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.6231884057972" y="146.65178571428569"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="64" height="44"/>
+    </resources>
 </document>

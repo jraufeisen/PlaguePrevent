@@ -17,6 +17,8 @@
 		EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB47A34B2426D48100868B50 /* PopupMoneyViewController.xib */; };
 		EB4C16ED24279C1900DCD348 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C16EB24279C1900DCD348 /* HeaderCollectionReusableView.swift */; };
 		EB4C16EE24279C1900DCD348 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C16EC24279C1900DCD348 /* HeaderCollectionReusableView.xib */; };
+		EB4C16F22427A4DA00DCD348 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C16EF2427A49200DCD348 /* StatsViewController.swift */; };
+		EB4C16F82427A73800DCD348 /* InfectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -72,6 +74,9 @@
 		EB47A34B2426D48100868B50 /* PopupMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMoneyViewController.xib; sourceTree = "<group>"; };
 		EB4C16EB24279C1900DCD348 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCollectionReusableView.swift; path = "PlaguePrevent/Game ViewController/HeaderCollectionReusableView.swift"; sourceTree = SOURCE_ROOT; };
 		EB4C16EC24279C1900DCD348 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = "PlaguePrevent/Game ViewController/HeaderCollectionReusableView.xib"; sourceTree = SOURCE_ROOT; };
+		EB4C16EF2427A49200DCD348 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfectedTableViewCell.xib; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +182,24 @@
 			path = "Scrollview subviews";
 			sourceTree = "<group>";
 		};
+		EB4C16F12427A49900DCD348 /* Statistics View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C16EF2427A49200DCD348 /* StatsViewController.swift */,
+				EB4C16F62427A56500DCD348 /* Graph Cells */,
+			);
+			path = "Statistics View Controller";
+			sourceTree = "<group>";
+		};
+		EB4C16F62427A56500DCD348 /* Graph Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */,
+				EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */,
+			);
+			path = "Graph Cells";
+			sourceTree = "<group>";
+		};
 		EB745E4224257361005280BB = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +227,7 @@
 				EB745E5024257361005280BB /* SceneDelegate.swift */,
 				EB745E5424257361005280BB /* Main.storyboard */,
 				EB390DAA24264B370009CEB0 /* Views */,
+				EB4C16F12427A49900DCD348 /* Statistics View Controller */,
 				EBD2B2C52425884100D37B6B /* Game ViewController */,
 				EB745E5724257364005280BB /* Assets.xcassets */,
 				EB745E5924257364005280BB /* LaunchScreen.storyboard */,
@@ -442,9 +466,11 @@
 				EB745E63242573C6005280BB /* MoneyMeasure.swift in Sources */,
 				EB982D7224267C750080099D /* MeasureEconomics.swift in Sources */,
 				EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */,
+				EB4C16F82427A73800DCD348 /* InfectedTableViewCell.swift in Sources */,
 				EB745E5124257361005280BB /* SceneDelegate.swift in Sources */,
 				EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */,
 				EBDFEC08242634AF00C896FC /* UIViewController+Visibility.swift in Sources */,
+				EB4C16F22427A4DA00DCD348 /* StatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YLJFWRHN2U;
 				INFOPLIST_FILE = PlaguePrevent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -613,7 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YLJFWRHN2U;
 				INFOPLIST_FILE = PlaguePrevent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

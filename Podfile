@@ -9,4 +9,5 @@ target 'PlaguePrevent' do
   pod "CSStickyHeaderFlowLayout"
   pod 'MarqueeLabel'
   pod 'DynamicBlurView'
+  pod 'Charts'
 end

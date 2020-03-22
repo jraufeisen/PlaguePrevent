@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     @IBOutlet var measuresCollectionView: UICollectionView!
     @IBOutlet private var stickySplitLayout: CSStickyHeaderFlowLayout!
     private var header: HeaderCollectionReusableView?
+    @IBOutlet weak var statsButton: UIButton!
     
     private var measurePackage = MeasurePackage()
     private var simulation: Simulation?

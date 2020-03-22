@@ -1,3 +1,4 @@
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSStickyHeaderFlowLayout.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework

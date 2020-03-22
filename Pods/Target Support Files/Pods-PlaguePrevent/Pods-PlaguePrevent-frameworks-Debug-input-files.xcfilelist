@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework
 ${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework
