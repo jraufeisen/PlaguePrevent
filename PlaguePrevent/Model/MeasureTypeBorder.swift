@@ -13,16 +13,16 @@ import UIKit
 extension MeasureTypeBorder {
     func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         let popup = PopupDialog(title: MeasureTypeBorder.open.shortTitle(), message: MeasureTypeBorder.open.infoText(), image: MeasureTypeBorder.open.largeLogo())
-        let buttonOne = CancelButton(title: MeasureTypeBorder.open.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeBorder.open.longDescription()) {
             delegate.didChangeBorder(state: .open)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeBorder.noTourists.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeBorder.noTourists.longDescription()) {
             delegate.didChangeBorder(state: .noTourists)
         }
-        let buttonThree = CancelButton(title: MeasureTypeBorder.goodsOnly.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureTypeBorder.goodsOnly.longDescription()) {
             delegate.didChangeBorder(state: .goodsOnly)
         }
-        let buttonFour = CancelButton(title: MeasureTypeBorder.closed.longDescription()) {
+        let buttonFour = SelectionButton(title: MeasureTypeBorder.closed.longDescription()) {
             delegate.didChangeBorder(state: .closed)
         }
 

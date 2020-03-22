@@ -12,17 +12,17 @@ extension MeasureTypeCommunication {
 
     func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         let popup = PopupDialog(title: MeasureTypeCommunication.fullTransparency.shortTitle(), message: MeasureTypeCommunication.fullTransparency.infoText(), image: MeasureTypeCommunication.fullTransparency.largeLogo())
-        let buttonOne = CancelButton(title: MeasureTypeCommunication.fullTransparency.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeCommunication.fullTransparency.longDescription()) {
             delegate.didChangeCommunication(state: .fullTransparency)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeCommunication.euphemistic.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeCommunication.euphemistic.longDescription()) {
             delegate.didChangeCommunication(state: .euphemistic)
 
         }
-        let buttonThree = CancelButton(title: MeasureTypeCommunication.calmingTransparency.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureTypeCommunication.calmingTransparency.longDescription()) {
             delegate.didChangeCommunication(state: .calmingTransparency)
         }
-        let buttonFour = CancelButton(title: MeasureTypeCommunication.sayNothing.longDescription()) {
+        let buttonFour = SelectionButton(title: MeasureTypeCommunication.sayNothing.longDescription()) {
             delegate.didChangeCommunication(state: .sayNothing)
         }
 

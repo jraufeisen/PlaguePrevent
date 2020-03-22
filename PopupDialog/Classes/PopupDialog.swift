@@ -56,7 +56,7 @@ final public class PopupDialog: UIViewController {
     }
 
     /// The set of buttons
-    fileprivate var buttons = [PopupDialogButton]()
+    var buttons = [PopupDialogButton]()
 
     /// Whether keyboard has shifted view
     internal var keyboardShown = false
@@ -285,6 +285,14 @@ final public class PopupDialog: UIViewController {
             dismiss({ button.buttonAction?() })
         } else {
             button.buttonAction?()
+        }
+        
+        // mark selected
+        button.titleColor = .systemBlue
+        for otherButton in self.buttons {
+            if otherButton != button {
+                otherButton.titleColor = .systemGray
+            }
         }
     }
 

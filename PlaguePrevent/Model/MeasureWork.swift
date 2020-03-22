@@ -15,13 +15,13 @@ extension MeasureTypeWork {
         let work = MeasureTypeWork.asUsual
         let popup = PopupDialog(title: work.shortTitle(), message: work.infoText(), image: work.largeLogo())
 
-        let buttonOne = CancelButton(title: MeasureTypeWork.asUsual.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeWork.asUsual.longDescription()) {
             delegate.didChangeWork(state: .asUsual)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeWork.homeOfficeWherePossible.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeWork.homeOfficeWherePossible.longDescription()) {
             delegate.didChangeWork(state: .homeOfficeWherePossible)
         }
-        let buttonThree = CancelButton(title: MeasureTypeWork.homeOfficeEverywhere.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureTypeWork.homeOfficeEverywhere.longDescription()) {
             delegate.didChangeWork(state: .homeOfficeEverywhere)
         }
 

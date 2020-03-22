@@ -52,3 +52,15 @@ public final class DestructiveButton: PopupDialogButton {
         super.setupView()
     }
 }
+
+// MARK: Simple selection without dismissing
+
+public class SelectionButton: PopupDialogButton {
+    
+    override public func setupView() {
+        defaultTitleColor = UIColor.lightGray
+        super.setupView()
+        dismissOnTap = false
+    }
+    
+}

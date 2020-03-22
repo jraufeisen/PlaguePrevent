@@ -12,13 +12,13 @@ extension MeasureEffectiveness {
 
     func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         let popup = PopupDialog(title: MeasureEffectiveness.voluntarily.shortTitle(), message: MeasureEffectiveness.voluntarily.infoText(), image: MeasureEffectiveness.voluntarily.largeLogo())
-        let buttonOne = CancelButton(title: MeasureEffectiveness.voluntarily.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureEffectiveness.voluntarily.longDescription()) {
             delegate.didChangeEffectiveness(state: .voluntarily)
         }
-        let buttonTwo = CancelButton(title: MeasureEffectiveness.enforcedByPolice.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureEffectiveness.enforcedByPolice.longDescription()) {
             delegate.didChangeEffectiveness(state: .enforcedByPolice)
         }
-        let buttonThree = CancelButton(title: MeasureEffectiveness.enforcedByMilitary.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureEffectiveness.enforcedByMilitary.longDescription()) {
             delegate.didChangeEffectiveness(state: .enforcedByMilitary)
         }
 

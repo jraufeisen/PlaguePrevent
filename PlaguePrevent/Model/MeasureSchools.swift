@@ -12,10 +12,10 @@ extension MeasureTypeSchools {
 
     func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         let popup = PopupDialog(title: MeasureTypeSchools.open.shortTitle(), message: MeasureTypeSchools.open.infoText(), image: MeasureTypeSchools.open.largeLogo())
-        let buttonOne = CancelButton(title: MeasureTypeSchools.closed.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeSchools.closed.longDescription()) {
             delegate.didChangeSchools(state: .closed)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeSchools.open.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeSchools.open.longDescription()) {
             delegate.didChangeSchools(state: .open)
         }
 

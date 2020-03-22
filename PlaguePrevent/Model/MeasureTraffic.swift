@@ -15,16 +15,16 @@ extension MeasureTypeTraffic {
         let traffic = MeasureTypeTraffic.regionalOnly
         let popup = PopupDialog(title: traffic.shortTitle(), message: traffic.infoText(), image: traffic.largeLogo())
 
-        let buttonOne = CancelButton(title: MeasureTypeTraffic.noRestriction.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeTraffic.noRestriction.longDescription()) {
             delegate.didChangeTraffic(state: .noRestriction)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeTraffic.noFlights.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeTraffic.noFlights.longDescription()) {
             delegate.didChangeTraffic(state: .noFlights)
         }
-        let buttonThree = CancelButton(title: MeasureTypeTraffic.restrictedLongDistance.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureTypeTraffic.restrictedLongDistance.longDescription()) {
             delegate.didChangeTraffic(state: .restrictedLongDistance)
         }
-        let buttonFour = CancelButton(title: MeasureTypeTraffic.regionalOnly.longDescription()) {
+        let buttonFour = SelectionButton(title: MeasureTypeTraffic.regionalOnly.longDescription()) {
             delegate.didChangeTraffic(state: .regionalOnly)
         }
 

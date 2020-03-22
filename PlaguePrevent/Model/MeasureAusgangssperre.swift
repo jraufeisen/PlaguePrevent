@@ -17,13 +17,13 @@ extension MeasureTypeAusgangssperre {
         let sperre = MeasureTypeAusgangssperre.inactive
         let popup = PopupDialog(title: sperre.shortTitle(), message: sperre.infoText(), image: sperre.largeLogo())
 
-        let buttonOne = CancelButton(title: MeasureTypeAusgangssperre.active.longDescription()) {
+        let buttonOne = SelectionButton(title: MeasureTypeAusgangssperre.active.longDescription()) {
             delegate.didChangeAusgangssperre(state: .active)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeAusgangssperre.sperrstunden.longDescription()) {
+        let buttonTwo = SelectionButton(title: MeasureTypeAusgangssperre.sperrstunden.longDescription()) {
             delegate.didChangeAusgangssperre(state: .inactive)
         }
-        let buttonThree = CancelButton(title: MeasureTypeAusgangssperre.inactive.longDescription()) {
+        let buttonThree = SelectionButton(title: MeasureTypeAusgangssperre.inactive.longDescription()) {
             delegate.didChangeAusgangssperre(state: .inactive)
         }
 
