@@ -22,7 +22,7 @@
 		EB745E5624257361005280BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5424257361005280BB /* Main.storyboard */; };
 		EB745E5824257364005280BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5724257364005280BB /* Assets.xcassets */; };
 		EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB745E5924257364005280BB /* LaunchScreen.storyboard */; };
-		EB745E63242573C6005280BB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E62242573C6005280BB /* Measure.swift */; };
+		EB745E63242573C6005280BB /* MoneyMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E62242573C6005280BB /* MoneyMeasure.swift */; };
 		EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */; };
 		EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */; };
 		EB7CCAD62426849800786B4D /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CCAD52426849800786B4D /* Simulation.swift */; };
@@ -78,7 +78,7 @@
 		EB745E5724257364005280BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB745E5A24257364005280BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB745E5C24257364005280BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB745E62242573C6005280BB /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		EB745E62242573C6005280BB /* MoneyMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyMeasure.swift; sourceTree = "<group>"; };
 		EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuresCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB745E6724258557005280BB /* MeasuresCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasuresCollectionViewCell.xib; sourceTree = "<group>"; };
 		EB7CCAD52426849800786B4D /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7CCAD72426849D00786B4D /* Simulation */,
-				EB745E62242573C6005280BB /* Measure.swift */,
+				EB745E62242573C6005280BB /* MoneyMeasure.swift */,
 				EBDFEC1A24263DE700C896FC /* DefaultMeasureDescription.swift */,
 				EBDFEC10242637CD00C896FC /* MeasurePackage.swift */,
 				EB982D7324267C860080099D /* MeasureBusinesses.swift */,
@@ -439,7 +439,7 @@
 				EB390DAF242650EA0009CEB0 /* HeaderCollectionReusableView.swift in Sources */,
 				EBDFEC09242634AF00C896FC /* TransitionAnimator.swift in Sources */,
 				EB745E4F24257361005280BB /* AppDelegate.swift in Sources */,
-				EB745E63242573C6005280BB /* Measure.swift in Sources */,
+				EB745E63242573C6005280BB /* MoneyMeasure.swift in Sources */,
 				EB982D7224267C750080099D /* MeasureEconomics.swift in Sources */,
 				EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */,
 				EB745E5124257361005280BB /* SceneDelegate.swift in Sources */,

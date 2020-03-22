@@ -12,13 +12,12 @@ extension EconomicHelpMeasure {
 
     func popUp(delegate: ChangeMeasuresDelegate) -> PopupDialog {
         
-        let science = EconomicHelpMeasure.init(money: 0)
 
         let moneyVC = PopupMoneyViewController(nibName: "PopupMoneyViewController", bundle: .main)
-        moneyVC.shortTitle = science.shortTitle()
-        moneyVC.longDescription = science.longDescription()
-        moneyVC.image = science.largeLogo()
-
+        moneyVC.shortTitle = shortTitle()
+        moneyVC.longDescription = longDescription()
+        moneyVC.image = largeLogo()
+        moneyVC.money = self.money
         let popup = PopupDialog(viewController: moneyVC,
                                 buttonAlignment: .horizontal,
                                 transitionStyle: .bounceUp,

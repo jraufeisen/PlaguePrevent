@@ -158,9 +158,9 @@ class Simulation {
     }
     
     // Call this repeatedly to advance the simulation
-    func simulateNextStep() {
+    func simulateNextStep(measurePackage: MeasurePackage) {
         let i = y_values.count
-        let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], measures: MeasurePackage(), f: simulationStep )
+        let newValue = self.rk4(dx: dx, x: dx*Double(i-1), y: y_values[i-1], measures: measurePackage, f: simulationStep )
         y_values.append(newValue)
     }
  

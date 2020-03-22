@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
         let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0)
         simulation = Simulation.init(anfangswerte: initCondition)
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
-            self.simulation?.simulateNextStep()
+            self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
             self.updateUI()
         }
     }
@@ -122,51 +122,51 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-// MARK: - Change measures
+// MARK: - Change measure package
 
 extension GameViewController: ChangeMeasuresDelegate {
     func didChangeEffectiveness(state: MeasureEffectiveness) {
-        
+        measurePackage.enforcement = state
     }
     
     func didChangeBorder(state: MeasureTypeBorder) {
-        
+        measurePackage.border = state
     }
     
     func didChangeSchools(state: MeasureTypeSchools) {
-        
+        measurePackage.school = state
     }
     
     func didChangeTraffic(state: MeasureTypeTraffic) {
-        
+        measurePackage.traffic = state
     }
     
     func didChangeWork(state: MeasureTypeWork) {
-        
+        measurePackage.work = state
     }
     
     func didChangeAusgangssperre(state: MeasureTypeAusgangssperre) {
-        
+        measurePackage.ausgangssperre = state
     }
     
     func didChangeBusinesses(state: MeasureTypeBusinesses) {
-        
+        measurePackage.business = state
     }
     
     func didChangeCommunication(state: MeasureTypeCommunication) {
-        
+        measurePackage.communication = state
     }
     
     func didChangeScience(state: ScienceMeasure) {
-        
+        measurePackage.science = state
     }
     
     func didChangeHealth(state: HealthServicesMeasure) {
-        
+        measurePackage.health = state
     }
     
     func didChangeEconomics(state: EconomicHelpMeasure) {
-        
+        measurePackage.economicHelps = state
     }
     
     

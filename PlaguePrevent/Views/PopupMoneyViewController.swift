@@ -15,6 +15,8 @@ class PopupMoneyViewController: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    
+    var money: Int = 0
     var image: UIImage?
     var shortTitle: String = ""
     var longDescription: String = ""
@@ -26,6 +28,7 @@ class PopupMoneyViewController: UIViewController {
         imageView.image = image
         titleLabel.text = shortTitle
         subtitleLabel.text = longDescription
+        textField.placeholder = "\(money) Euro"
     }
 
 
