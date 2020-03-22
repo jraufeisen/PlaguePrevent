@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21035550F24B8CDBBBCC60F0 /* Pods_PlaguePrevent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */; };
+		D5C24E942427AF340004C606 /* PopulationRedesignedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C24E932427AF340004C606 /* PopulationRedesignedCard.xib */; };
 		EB390DAB24264B6B0009CEB0 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DA824264B340009CEB0 /* BarView.swift */; };
 		EB390DB3242659D50009CEB0 /* CasesCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390DB1242659D40009CEB0 /* CasesCard.xib */; };
 		EB390DB4242659D50009CEB0 /* CasesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB390DB2242659D50009CEB0 /* CasesCard.swift */; };
@@ -63,6 +64,7 @@
 		005E7FDAAC8523FE606472A1 /* Pods-PlaguePrevent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaguePrevent.debug.xcconfig"; path = "Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent.debug.xcconfig"; sourceTree = "<group>"; };
 		1FE97EC5A2A2A1A5C20BA1CB /* Pods-PlaguePrevent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaguePrevent.release.xcconfig"; path = "Target Support Files/Pods-PlaguePrevent/Pods-PlaguePrevent.release.xcconfig"; sourceTree = "<group>"; };
 		221694C30D255878743A78EA /* Pods_PlaguePrevent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaguePrevent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C24E932427AF340004C606 /* PopulationRedesignedCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopulationRedesignedCard.xib; sourceTree = "<group>"; };
 		EB390DA824264B340009CEB0 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		EB390DB1242659D40009CEB0 /* CasesCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CasesCard.xib; sourceTree = "<group>"; };
 		EB390DB2242659D50009CEB0 /* CasesCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesCard.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				EB390DB1242659D40009CEB0 /* CasesCard.xib */,
 				EB390DB624265B730009CEB0 /* PopulationCard.swift */,
 				EB390DB524265B720009CEB0 /* PopulationCard.xib */,
+				D5C24E932427AF340004C606 /* PopulationRedesignedCard.xib */,
 			);
 			path = "Scrollview subviews";
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			files = (
 				EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */,
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
+				D5C24E942427AF340004C606 /* PopulationRedesignedCard.xib in Resources */,
 				EB4C16EE24279C1900DCD348 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
 				EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */,

@@ -20,7 +20,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     private var cards = [UIView]()
     
     var casesCard: CasesCard?
-    var populationcard: PopulationCard?
+    var populationcard: RedesignedPopulationCard?
     
     private var liveTickerMessages = [String]() {
         didSet {
@@ -62,7 +62,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     }
         
     func addPopulationCard() {
-        let card = PopulationCard.init(frame: scrollView.frame)
+        let card = RedesignedPopulationCard.init(frame: scrollView.frame)
         populationcard = card
         addCard(card: card)
     }

@@ -226,7 +226,7 @@ class Simulation {
         let f_genesen: Double = (y.n_infiziert - (part7 + part8)) / krankheitsdauer - part9 * Kg*(risk_h*y.n_genesen)
         
         let f_krankenhaus: Double = (health_cost - y.n_krankenhaus * operating_cost_health)/capital_cost_health
-        let f_budget: Double = revenue - totalcost
+        let f_budget: Double = (revenue - totalcost) / 10
         let f_moral: Double = moral / 100
         
         return GesuchteWerte.init(n_gesund: f_gesund, n_infiziert: f_infiziert, n_gefallen: f_gefallen, n_genesen: f_genesen, n_krankenhaus: f_krankenhaus, n_budget: f_budget, moral: f_moral)
