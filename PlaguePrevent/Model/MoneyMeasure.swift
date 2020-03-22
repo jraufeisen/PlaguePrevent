@@ -57,7 +57,7 @@ enum MeasureEffectiveness : MeasureDescription {
         return "Mit diesem Regler veränderst du die Stärke deiner Maßnahmen. Bedenke,dass Maßnahmen angemessen sein müssen, da Sie sonst die Moral negativ beeinflussen können"
     }
     func smallLogo() -> UIImage {
-        return #imageLiteral(resourceName: "Maßnahmenintensität-Small")
+        return #imageLiteral(resourceName: "poop")
     }
     func largeLogo() -> UIImage {
         return #imageLiteral(resourceName: "Maßnahmenintensität")

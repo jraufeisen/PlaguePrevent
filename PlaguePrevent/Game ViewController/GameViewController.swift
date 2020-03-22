@@ -66,6 +66,8 @@ class GameViewController: UIViewController {
     
     private func updateUI() {
         guard let latestValue = simulation?.currentValue() else {return}
+        guard let valueChange = simulation?.currentChange() else {return}
+
         let infected = latestValue.n_infiziert
         let deaths = latestValue.n_gefallen
         let recovered = latestValue.n_genesen
@@ -79,9 +81,13 @@ class GameViewController: UIViewController {
         let money = Int(latestValue.n_budget)
         let moral = Int(latestValue.moral)
         
-        header?.populationcard?.moralLabel.text = "Moral: \(moral)"
+        header?.populationcard?.moralLabel.text = "\(moral)"
         header?.populationcard?.setMoney(money: money)
-        header?.populationcard?.hospitalLabel.text = "\(beds) hospital beds"
+        header?.populationcard?.hospitalLabel.text = "\(beds) Betten"
+
+        header?.populationcard?.setMoralChange(moral: valueChange.moral)
+        header?.populationcard?.setHealthChange(health: valueChange.n_krankenhaus)
+        header?.populationcard?.setMoneyChange(money: valueChange.n_budget)
     }
     
     @IBAction func pressedStats(_ sender: Any) {

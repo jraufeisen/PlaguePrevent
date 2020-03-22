@@ -48,9 +48,21 @@ struct GesuchteWerte {
         let new_infiziert = lhs.n_infiziert + rhs.n_infiziert
         let new_gefallen = lhs.n_gefallen + rhs.n_gefallen
         let new_genesen = lhs.n_genesen + rhs.n_genesen
-        let new_krankenhaus = lhs.n_genesen + rhs.n_genesen
+        let new_krankenhaus = lhs.n_krankenhaus + rhs.n_krankenhaus
         let new_budget = lhs.n_budget + rhs.n_budget
         let new_moral = lhs.moral + rhs.moral
+
+        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
+    }
+    
+    static func -(lhs: GesuchteWerte, rhs: GesuchteWerte) -> GesuchteWerte {
+        let new_gesund = lhs.n_gesund - rhs.n_gesund
+        let new_infiziert = lhs.n_infiziert - rhs.n_infiziert
+        let new_gefallen = lhs.n_gefallen - rhs.n_gefallen
+        let new_genesen = lhs.n_genesen - rhs.n_genesen
+        let new_krankenhaus = lhs.n_krankenhaus - rhs.n_krankenhaus
+        let new_budget = lhs.n_budget - rhs.n_budget
+        let new_moral = lhs.moral - rhs.moral
 
         return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
     }
@@ -197,14 +209,14 @@ class Simulation {
         case .enforcedByMilitary: staerke_vorfaktor = 3
         }
         
-        let grenzschutz_moral: Double = grenzschutz_vorfaktor * 1 * ((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000)))
-        let verkehr_moral: Double = verkehr_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let arbeit_moral: Double = arbeit_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let ausgang_moral:Double = ausgang_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let geschaefte_moral: Double = geschaefte_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let grenzschutz_moral: Double = grenzschutz_vorfaktor * 1 * (((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000))))
+        let verkehr_moral: Double = verkehr_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let arbeit_moral: Double = arbeit_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let ausgang_moral:Double = ausgang_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let geschaefte_moral: Double = geschaefte_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
         let staerke_demonstriert: Double = staerke_vorfaktor * 6
 
-        moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert
+        moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert - progress * 5
 
         let Pgi: Double = Ki*y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert)
         let Kki: Double = Pgi * Kg * (risk_g * y.n_gesund + risk_h * y.n_genesen)
@@ -226,7 +238,7 @@ class Simulation {
         let f_genesen: Double = (y.n_infiziert - (part7 + part8)) / krankheitsdauer - part9 * Kg*(risk_h*y.n_genesen)
         
         let f_krankenhaus: Double = (health_cost - y.n_krankenhaus * operating_cost_health)/capital_cost_health
-        let f_budget: Double = revenue - totalcost
+        let f_budget: Double = (revenue - totalcost) / 10
         let f_moral: Double = moral / 100
         
         return GesuchteWerte.init(n_gesund: f_gesund, n_infiziert: f_infiziert, n_gefallen: f_gefallen, n_genesen: f_genesen, n_krankenhaus: f_krankenhaus, n_budget: f_budget, moral: f_moral)
@@ -255,5 +267,12 @@ class Simulation {
  
     func currentValue() -> GesuchteWerte {
         return y_values.last!
+    }
+    
+    func currentChange() -> GesuchteWerte {
+        if y_values.count > 1 {
+            return y_values.last! - y_values[y_values.count - 2]
+        }
+        return GesuchteWerte.init(n_gesund: 0.0, n_infiziert: 0.0, n_gefallen: 0.0, n_genesen: 0.0, n_krankenhaus: 0.0, n_budget: 0.0, moral: 0.0)
     }
 }
