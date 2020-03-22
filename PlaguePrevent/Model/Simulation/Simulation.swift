@@ -54,6 +54,18 @@ struct GesuchteWerte {
 
         return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
     }
+    
+    static func -(lhs: GesuchteWerte, rhs: GesuchteWerte) -> GesuchteWerte {
+        let new_gesund = lhs.n_gesund - rhs.n_gesund
+        let new_infiziert = lhs.n_infiziert - rhs.n_infiziert
+        let new_gefallen = lhs.n_gefallen - rhs.n_gefallen
+        let new_genesen = lhs.n_genesen - rhs.n_genesen
+        let new_krankenhaus = lhs.n_krankenhaus - rhs.n_krankenhaus
+        let new_budget = lhs.n_budget - rhs.n_budget
+        let new_moral = lhs.moral - rhs.moral
+
+        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
+    }
 
     
 }
@@ -255,5 +267,12 @@ class Simulation {
  
     func currentValue() -> GesuchteWerte {
         return y_values.last!
+    }
+    
+    func currentChange() -> GesuchteWerte {
+        if y_values.count > 1 {
+            return y_values.last! - y_values[y_values.count - 2]
+        }
+        return GesuchteWerte.init(n_gesund: 0.0, n_infiziert: 0.0, n_gefallen: 0.0, n_genesen: 0.0, n_krankenhaus: 0.0, n_budget: 0.0, moral: 0.0)
     }
 }
