@@ -7,7 +7,6 @@ target 'PlaguePrevent' do
 
   # Pods for PlaguePrevent
   pod "CSStickyHeaderFlowLayout"
-  pod 'MarqueeLabel'
   pod 'DynamicBlurView'
   pod 'Charts'
 end

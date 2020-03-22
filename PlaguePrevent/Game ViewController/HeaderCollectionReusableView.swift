@@ -6,12 +6,11 @@
 //
 
 import UIKit
-import MarqueeLabel
 
 class HeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet private var contentView: UIView!
-    @IBOutlet weak var topLabel: MarqueeLabel!
+    @IBOutlet weak var topLabel: LiveTickerLabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bigLabel: UILabel!
     @IBOutlet weak var smallLabel: UILabel!
@@ -21,28 +20,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     var casesCard: CasesCard?
     var populationcard: PopulationCard?
-    
-    private var liveTickerMessages = [String]() {
-        didSet {
-            if liveTickerMessages.count > 1 {
-                topLabel.text = liveTickerMessages.joined(separator: " +++ ") + " +++ "
-            } else if liveTickerMessages.count == 1 {
-                topLabel.text = "+++ " + liveTickerMessages.first! + " +++"
-            } else if liveTickerMessages.count == 0 {
-                topLabel.text = ""
-            }
-        }
-    }
-    
-    func addLiveTicker(text: String, duration: TimeInterval) {
-        liveTickerMessages.append(text)
-        Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { (timer) in
-            if let index = self.liveTickerMessages.firstIndex(of: text) {
-                self.liveTickerMessages.remove(at: index)
-            }
-        }
-    }
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         scrollView.isOpaque = true
@@ -53,12 +31,12 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         topLabel.speed = .rate(70)
         topLabel.animationCurve = .linear
         topLabel.fadeLength = 0
+
         topLabel.restartLabel()
         
         if traitCollection.userInterfaceStyle == .dark {
             imageView.image = imageView.image?.withTintColor(.white)
         }
-        liveTickerMessages = [String]() // Reset label
     }
         
     func addPopulationCard() {

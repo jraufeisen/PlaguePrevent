@@ -33,7 +33,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+++ Live-Ticker +++" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8l-4O-oWE" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+++ Live-Ticker +++" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8l-4O-oWE" customClass="LiveTickerLabel" customModule="PlaguePrevent" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="8" width="596" height="26.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                             <nil key="textColor"/>

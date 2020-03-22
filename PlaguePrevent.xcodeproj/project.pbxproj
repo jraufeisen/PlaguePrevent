@@ -30,6 +30,8 @@
 		EB4C17112427AEA100DCD348 /* RecoveredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C170B2427AEA100DCD348 /* RecoveredTableViewCell.swift */; };
 		EB4C17142427AEAA00DCD348 /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17122427AEAA00DCD348 /* HospitalTableViewCell.swift */; };
 		EB4C17152427AEAA00DCD348 /* HospitalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17132427AEAA00DCD348 /* HospitalTableViewCell.xib */; };
+		EB4C171D2427B54900DCD348 /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C171C2427B49500DCD348 /* MarqueeLabel.swift */; };
+		EB4C171F2427B67400DCD348 /* LiveTickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17162427B39D00DCD348 /* LiveTickerLabel.swift */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -98,6 +100,10 @@
 		EB4C170B2427AEA100DCD348 /* RecoveredTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveredTableViewCell.swift; sourceTree = "<group>"; };
 		EB4C17122427AEAA00DCD348 /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
 		EB4C17132427AEAA00DCD348 /* HospitalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C17162427B39D00DCD348 /* LiveTickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTickerLabel.swift; sourceTree = "<group>"; };
+		EB4C17192427B49500DCD348 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EB4C171A2427B49500DCD348 /* README.mdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		EB4C171C2427B49500DCD348 /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 		EB18E14324266D79001A71AC /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				EB4C17162427B39D00DCD348 /* LiveTickerLabel.swift */,
 				EB4C16EB24279C1900DCD348 /* HeaderCollectionReusableView.swift */,
 				EB4C16EC24279C1900DCD348 /* HeaderCollectionReusableView.xib */,
 				EB745E6624258557005280BB /* MeasuresCollectionViewCell.swift */,
@@ -231,6 +238,24 @@
 			path = "Graph Cells";
 			sourceTree = "<group>";
 		};
+		EB4C17182427B49500DCD348 /* MarqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C17192427B49500DCD348 /* LICENSE */,
+				EB4C171A2427B49500DCD348 /* README.mdown */,
+				EB4C171B2427B49500DCD348 /* Sources */,
+			);
+			path = MarqueeLabel;
+			sourceTree = "<group>";
+		};
+		EB4C171B2427B49500DCD348 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C171C2427B49500DCD348 /* MarqueeLabel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		EB745E4224257361005280BB = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +278,7 @@
 		EB745E4D24257361005280BB /* PlaguePrevent */ = {
 			isa = PBXGroup;
 			children = (
+				EB4C17182427B49500DCD348 /* MarqueeLabel */,
 				EBDFEC12242637D100C896FC /* Model */,
 				EB745E4E24257361005280BB /* AppDelegate.swift */,
 				EB745E5024257361005280BB /* SceneDelegate.swift */,
@@ -490,7 +516,9 @@
 				EB4C17052427AD1500DCD348 /* DeathsTableViewCell.swift in Sources */,
 				EBDFEC07242634AF00C896FC /* PopupDialogButton.swift in Sources */,
 				EB982D6224267B320080099D /* MeasureEffectiveness.swift in Sources */,
+				EB4C171D2427B54900DCD348 /* MarqueeLabel.swift in Sources */,
 				EBDFEC0B242634AF00C896FC /* PopupDialogDefaultViewController.swift in Sources */,
+				EB4C171F2427B67400DCD348 /* LiveTickerLabel.swift in Sources */,
 				EBDFEC0C242634AF00C896FC /* TransitionAnimations.swift in Sources */,
 				EBDFEC0E242634AF00C896FC /* PresentationManager.swift in Sources */,
 				EBDFEC0F242634AF00C896FC /* PopupDialogContainerView.swift in Sources */,

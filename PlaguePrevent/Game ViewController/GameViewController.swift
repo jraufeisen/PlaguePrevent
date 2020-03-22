@@ -37,6 +37,13 @@ class GameViewController: UIViewController {
                 self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
                 self.updateUI()
             }
+            
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+                // Check for a new random live ticker message
+                guard let header = self.header else {return}
+                let randomMessage = self.measurePackage.randomTickerMessage()
+                header.topLabel.addLiveTicker(text: randomMessage, duration: self.tickerStayDuration)
+            }
         }
         
         switch traitCollection.userInterfaceStyle {
@@ -164,67 +171,67 @@ extension GameViewController: ChangeMeasuresDelegate {
     
     func didChangeEffectiveness(state: MeasureEffectiveness) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.enforcement = state
     }
     
     func didChangeBorder(state: MeasureTypeBorder) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.border = state
     }
     
     func didChangeSchools(state: MeasureTypeSchools) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.school = state
     }
     
     func didChangeTraffic(state: MeasureTypeTraffic) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.traffic = state
     }
     
     func didChangeWork(state: MeasureTypeWork) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.work = state
     }
     
     func didChangeAusgangssperre(state: MeasureTypeAusgangssperre) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.ausgangssperre = state
     }
     
     func didChangeBusinesses(state: MeasureTypeBusinesses) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.business = state
     }
     
     func didChangeCommunication(state: MeasureTypeCommunication) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.communication = state
     }
     
     func didChangeScience(state: ScienceMeasure) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.science = state
     }
     
     func didChangeHealth(state: HealthServicesMeasure) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.health = state
     }
     
     func didChangeEconomics(state: EconomicHelpMeasure) {
         let newTicker = state.instantTickerFeedback()
-        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
+        header?.topLabel.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.economicHelps = state
     }
     
