@@ -48,7 +48,7 @@ struct GesuchteWerte {
         let new_infiziert = lhs.n_infiziert + rhs.n_infiziert
         let new_gefallen = lhs.n_gefallen + rhs.n_gefallen
         let new_genesen = lhs.n_genesen + rhs.n_genesen
-        let new_krankenhaus = lhs.n_genesen + rhs.n_genesen
+        let new_krankenhaus = lhs.n_krankenhaus + rhs.n_krankenhaus
         let new_budget = lhs.n_budget + rhs.n_budget
         let new_moral = lhs.moral + rhs.moral
 
@@ -197,14 +197,14 @@ class Simulation {
         case .enforcedByMilitary: staerke_vorfaktor = 3
         }
         
-        let grenzschutz_moral: Double = grenzschutz_vorfaktor * 1 * ((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000)))
-        let verkehr_moral: Double = verkehr_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let arbeit_moral: Double = arbeit_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let ausgang_moral:Double = ausgang_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let geschaefte_moral: Double = geschaefte_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let grenzschutz_moral: Double = grenzschutz_vorfaktor * 1 * (((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000))))
+        let verkehr_moral: Double = verkehr_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let arbeit_moral: Double = arbeit_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let ausgang_moral:Double = ausgang_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
+        let geschaefte_moral: Double = geschaefte_vorfaktor * 2 * (((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000))))
         let staerke_demonstriert: Double = staerke_vorfaktor * 6
 
-        moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert
+        moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert - progress * 5
 
         let Pgi: Double = Ki*y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert)
         let Kki: Double = Pgi * Kg * (risk_g * y.n_gesund + risk_h * y.n_genesen)
