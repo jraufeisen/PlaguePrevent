@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/jojo/Developer/GitHub/PlaguePrevent/PlaguePrevent/Game ViewController/HeaderCollectionReusableView.xib">
-   </FileRef>
-   <FileRef
       location = "group:PlaguePrevent.xcodeproj">
    </FileRef>
    <FileRef
