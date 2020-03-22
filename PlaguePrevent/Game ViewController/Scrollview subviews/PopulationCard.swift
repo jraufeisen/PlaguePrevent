@@ -31,15 +31,24 @@ class PopulationCard: UIView {
     }
     
     func setMoney(money: Int) {
+        guard money >= 1000 else {
+            moneyLabel.text = "\(money) €"
+            return
+        }
         let moneyString = String(money)
         let money = Decimal(money)
 
         let suffixes = [
+            0: "",
             3: "k",
             6: "Mio",
             9: "Mrd",
             12: "Bio",
             15: "Brd",
+            18: "Trio",
+            21: "Trd",
+            24: "Quio",
+            27: "Qud"
         ]
         
         var anzahlStellen = 0
@@ -55,8 +64,10 @@ class PopulationCard: UIView {
         }
         
         var vorneString = moneyString.prefix(vorneStellen)
-        if vorneStellen < 3 {
-        //    vorneString
+        if vorneStellen < 3 && moneyString.count > 3 {
+            let startIndex = moneyString.index(moneyString.startIndex, offsetBy: vorneStellen)
+            let endIndex = moneyString.index(moneyString.startIndex, offsetBy: vorneStellen+(3-vorneStellen))
+            vorneString += "." + moneyString[startIndex...endIndex]
         }
         
         
