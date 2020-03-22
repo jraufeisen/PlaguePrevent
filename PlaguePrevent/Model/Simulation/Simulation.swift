@@ -84,16 +84,15 @@ class Simulation {
     
     var Ki: Double = 0.5
     var Kg: Double = 3
-    var mort_care: Double = 0.003; // Sterblichkeitsrate mit Behandlung
-    var mort_nocare: Double = 0.9; // Sterblichkeitsrate ohne Behandlung
-    var h_capacity: Double = 1500000; // Krankenhaus KapazitÃ¤
+    var mort_care: Double = 0.03; // Sterblichkeitsrate mit Behandlung
+    var mort_nocare: Double = 0.09; // Sterblichkeitsrate ohne Behandlung
     var krankheitsdauer: Double = 21.0; // Nachwievielen Tagen ist die Krankheit abgeklungen
     var risk_g: Double = 0.2; // Ansteckungsrisiko einer gesunden Person
     var risk_h: Double = 0.03; // Ansteckungsrisiko einer genesenen Person
 
     
-    let operating_cost_health = 10000 // Laufende Ausgaben fuer ein Krankenbett
-    let capital_cost_health = 40000000 // Kapitalkosten fuer ein Krankenbett
+    let operating_cost_health: Double = 10000 // Laufende Ausgaben fuer ein Krankenbett
+    let capital_cost_health: Double = 40000000 // Kapitalkosten fuer ein Krankenbett
 
     
     
@@ -101,7 +100,7 @@ class Simulation {
         let health_cost = Double(measures.health.money) // Ausgaben fuer Gesundheitssystem
         let research_cost = Double(measures.science.money);// Ausgaben fuer Forschung
         let fiscal_support = Double(measures.economicHelps.money) // Wirtschaftshilfen des Staates - Sozialismus
-        let GDP = 2000000000000.0;
+        let GDP: Double = 2000000000000.0;
 
         var grenzschutz: Double = 1.15
         var verkehr:Double = 1.1
@@ -153,12 +152,57 @@ class Simulation {
         let revenue: Double = sqrt(progress)*GDP*0.3*(1+fiscal_effect+workforce_real-geschaefte)
         let totalcost: Double = health_cost + fiscal_support + research_cost
         
-        let grenzschutz_moral: Double = 0.75 * 1 * ((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000)))
-        let verkehr_moral: Double = 1.1 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let arbeit_moral: Double = 1.1 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let ausgang_moral:Double = 2 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let geschaefte_moral: Double = 2 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
-        let staerke_demonstriert: Double = 3 * 6
+        
+        var grenzschutz_vorfaktor: Double = 0.75
+        switch measures.border {
+        case .open: grenzschutz_vorfaktor = 0
+        case .noTourists: grenzschutz_vorfaktor = 0.75
+        case .goodsOnly: grenzschutz_vorfaktor = 1.25
+        case .closed: grenzschutz_vorfaktor = 2
+        }
+        
+        var verkehr_vorfaktor: Double = 1.1
+        switch measures.traffic {
+        case .noRestriction: verkehr_vorfaktor = 0
+        case .noFlights:    verkehr_vorfaktor = 0.75
+        case .restrictedLongDistance: verkehr_vorfaktor = 1.25
+        case .regionalOnly: verkehr_vorfaktor = 2
+        }
+        
+        var arbeit_vorfaktor: Double = 1.1
+        switch measures.work {
+        case .asUsual: arbeit_vorfaktor = 0
+        case .homeOfficeWherePossible: arbeit_vorfaktor = 1.1
+        case .homeOfficeEverywhere: arbeit_vorfaktor = 2
+        }
+        
+        var ausgang_vorfaktor: Double = 2
+        switch measures.ausgangssperre {
+        case .active: ausgang_vorfaktor = 2
+        case .sperrstunden: ausgang_vorfaktor = 1
+        case .inactive: ausgang_vorfaktor = 0
+        }
+        
+        var geschaefte_vorfaktor: Double = 2
+        switch measures.business {
+        case .businessAsUsual: geschaefte_vorfaktor = 0
+        case .restrictedClosingHours: geschaefte_vorfaktor = 1
+        case .supermarketOnly: geschaefte_vorfaktor = 2
+        }
+        
+        var staerke_vorfaktor: Double = 3
+        switch measures.enforcement {
+        case .voluntarily: staerke_vorfaktor = 0
+        case .enforcedByPolice: staerke_vorfaktor = 1
+        case .enforcedByMilitary: staerke_vorfaktor = 3
+        }
+        
+        let grenzschutz_moral: Double = grenzschutz_vorfaktor * 1 * ((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000)))
+        let verkehr_moral: Double = verkehr_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let arbeit_moral: Double = arbeit_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let ausgang_moral:Double = ausgang_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let geschaefte_moral: Double = geschaefte_vorfaktor * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let staerke_demonstriert: Double = staerke_vorfaktor * 6
 
         moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert
 
@@ -181,7 +225,7 @@ class Simulation {
         let part9: Double = (Ki*y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert))
         let f_genesen: Double = (y.n_infiziert - (part7 + part8)) / krankheitsdauer - part9 * Kg*(risk_h*y.n_genesen)
         
-        let f_krankenhaus: Double = health_cost - totalcost
+        let f_krankenhaus: Double = (health_cost - y.n_krankenhaus * operating_cost_health)/capital_cost_health
         let f_budget: Double = revenue - totalcost
         let f_moral: Double = moral / 100
         

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let values = sim.simulate(dx: 0.1, end: 700)
         
         let infected = values.map { (gesuchtewerte) -> Double in
-            return gesuchtewerte.n_infiziert
+            return gesuchtewerte.n_gefallen
         }
         var text = ""
         for i in 0..<infected.count {
