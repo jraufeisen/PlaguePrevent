@@ -29,6 +29,8 @@ class PopupMoneyViewController: UIViewController {
         titleLabel.text = shortTitle
         subtitleLabel.text = longDescription
         textField.placeholder = "\(money) Euro"
+        
+
     }
 
 
