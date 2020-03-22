@@ -9,9 +9,9 @@
 import UIKit
 import Charts
 
-class DeathsTableViewCell: UITableViewCell {
+class MoralTableViewCell: UITableViewCell {
 
-    static let Identifier = "DeathsTableViewCellID"
+    static let Identifier = "MoralTableViewCellID"
 
     @IBOutlet weak var contentContainer: UIView!
     @IBOutlet weak var scrollView: UIScrollView!

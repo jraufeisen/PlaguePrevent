@@ -22,6 +22,14 @@
 		EB4C16F92427A8C200DCD348 /* InfectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */; };
 		EB4C17042427AD1500DCD348 /* DeathsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */; };
 		EB4C17052427AD1500DCD348 /* DeathsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */; };
+		EB4C170C2427AEA100DCD348 /* MoralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17062427AEA000DCD348 /* MoralTableViewCell.xib */; };
+		EB4C170D2427AEA100DCD348 /* MoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17072427AEA000DCD348 /* MoneyTableViewCell.swift */; };
+		EB4C170E2427AEA100DCD348 /* MoneyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17082427AEA000DCD348 /* MoneyTableViewCell.xib */; };
+		EB4C170F2427AEA100DCD348 /* RecoveredTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17092427AEA100DCD348 /* RecoveredTableViewCell.xib */; };
+		EB4C17102427AEA100DCD348 /* MoralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C170A2427AEA100DCD348 /* MoralTableViewCell.swift */; };
+		EB4C17112427AEA100DCD348 /* RecoveredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C170B2427AEA100DCD348 /* RecoveredTableViewCell.swift */; };
+		EB4C17142427AEAA00DCD348 /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17122427AEAA00DCD348 /* HospitalTableViewCell.swift */; };
+		EB4C17152427AEAA00DCD348 /* HospitalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17132427AEAA00DCD348 /* HospitalTableViewCell.xib */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -82,6 +90,14 @@
 		EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfectedTableViewCell.xib; sourceTree = "<group>"; };
 		EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeathsTableViewCell.xib; sourceTree = "<group>"; };
 		EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathsTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C17062427AEA000DCD348 /* MoralTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoralTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C17072427AEA000DCD348 /* MoneyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C17082427AEA000DCD348 /* MoneyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C17092427AEA100DCD348 /* RecoveredTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecoveredTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C170A2427AEA100DCD348 /* MoralTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoralTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C170B2427AEA100DCD348 /* RecoveredTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveredTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C17122427AEAA00DCD348 /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
+		EB4C17132427AEAA00DCD348 /* HospitalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalTableViewCell.xib; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +219,14 @@
 				EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */,
 				EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */,
 				EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */,
+				EB4C17122427AEAA00DCD348 /* HospitalTableViewCell.swift */,
+				EB4C17132427AEAA00DCD348 /* HospitalTableViewCell.xib */,
+				EB4C17072427AEA000DCD348 /* MoneyTableViewCell.swift */,
+				EB4C17082427AEA000DCD348 /* MoneyTableViewCell.xib */,
+				EB4C170A2427AEA100DCD348 /* MoralTableViewCell.swift */,
+				EB4C17062427AEA000DCD348 /* MoralTableViewCell.xib */,
+				EB4C170B2427AEA100DCD348 /* RecoveredTableViewCell.swift */,
+				EB4C17092427AEA100DCD348 /* RecoveredTableViewCell.xib */,
 			);
 			path = "Graph Cells";
 			sourceTree = "<group>";
@@ -378,12 +402,16 @@
 				EB4C17042427AD1500DCD348 /* DeathsTableViewCell.xib in Resources */,
 				EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */,
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
+				EB4C17152427AEAA00DCD348 /* HospitalTableViewCell.xib in Resources */,
 				EB4C16EE24279C1900DCD348 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
+				EB4C170C2427AEA100DCD348 /* MoralTableViewCell.xib in Resources */,
 				EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */,
+				EB4C170E2427AEA100DCD348 /* MoneyTableViewCell.xib in Resources */,
 				EBDFEC05242634AF00C896FC /* .gitkeep in Resources */,
 				EB4C16F92427A8C200DCD348 /* InfectedTableViewCell.xib in Resources */,
 				EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */,
+				EB4C170F2427AEA100DCD348 /* RecoveredTableViewCell.xib in Resources */,
 				EB745E5624257361005280BB /* Main.storyboard in Resources */,
 				EB390DB3242659D50009CEB0 /* CasesCard.xib in Resources */,
 			);
@@ -441,11 +469,13 @@
 				EB982D6E24267BFB0080099D /* MeasureScience.swift in Sources */,
 				EB982D6824267BCC0080099D /* MeasureTraffic.swift in Sources */,
 				EB390DB824265B730009CEB0 /* PopulationCard.swift in Sources */,
+				EB4C17102427AEA100DCD348 /* MoralTableViewCell.swift in Sources */,
 				EB982D6624267BC30080099D /* MeasureSchools.swift in Sources */,
 				EB47A34C2426D48100868B50 /* PopupMoneyViewController.swift in Sources */,
 				EB745E6824258557005280BB /* MeasuresCollectionViewCell.swift in Sources */,
 				EB745E5324257361005280BB /* GameViewController.swift in Sources */,
 				EB982D7024267C670080099D /* MeasureHealth.swift in Sources */,
+				EB4C17112427AEA100DCD348 /* RecoveredTableViewCell.swift in Sources */,
 				EB4C16ED24279C1900DCD348 /* HeaderCollectionReusableView.swift in Sources */,
 				EBDFEBFF242634AF00C896FC /* InteractiveTransition.swift in Sources */,
 				EBDFEC1524263CB700C896FC /* MeasureTypeBorder.swift in Sources */,
@@ -476,7 +506,9 @@
 				EB745E63242573C6005280BB /* MoneyMeasure.swift in Sources */,
 				EB982D7224267C750080099D /* MeasureEconomics.swift in Sources */,
 				EBDFEC02242634AF00C896FC /* UIView+Animations.swift in Sources */,
+				EB4C170D2427AEA100DCD348 /* MoneyTableViewCell.swift in Sources */,
 				EB4C16F82427A73800DCD348 /* InfectedTableViewCell.swift in Sources */,
+				EB4C17142427AEAA00DCD348 /* HospitalTableViewCell.swift in Sources */,
 				EB745E5124257361005280BB /* SceneDelegate.swift in Sources */,
 				EBDFEC00242634AF00C896FC /* PresentationController.swift in Sources */,
 				EBDFEC08242634AF00C896FC /* UIViewController+Visibility.swift in Sources */,
