@@ -30,6 +30,41 @@ class PopulationCard: UIView {
         commonInit()
     }
     
+    func setMoney(money: Int) {
+        let moneyString = String(money)
+        let money = Decimal(money)
+
+        let suffixes = [
+            3: "k",
+            6: "Mio",
+            9: "Mrd",
+            12: "Bio",
+            15: "Brd",
+        ]
+        
+        var anzahlStellen = 0
+        while money > pow(10,anzahlStellen) {
+            anzahlStellen += 1
+        }
+
+        var potenz = anzahlStellen - 1 // Wir wollen mindestens eine stelle vor dem komma
+        var vorneStellen = 1
+        while !suffixes.keys.contains(potenz) {
+            vorneStellen += 1
+            potenz -= 1
+        }
+        
+        var vorneString = moneyString.prefix(vorneStellen)
+        if vorneStellen < 3 {
+        //    vorneString
+        }
+        
+        
+        let formattedMoney = "\(vorneString) \(suffixes[potenz]!) €"
+        moneyLabel.text = formattedMoney
+    }
+
+    
     private func commonInit() {
         Bundle.main.loadNibNamed("PopulationCard", owner: self, options: nil)
         addSubview(contentView)

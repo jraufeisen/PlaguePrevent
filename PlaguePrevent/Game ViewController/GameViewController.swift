@@ -57,7 +57,7 @@ class GameViewController: UIViewController {
         let moral = Int(latestValue.moral)
         
         header?.populationcard?.moralLabel.text = "Moral: \(moral)"
-        header?.populationcard?.moneyLabel.text = "Money: \(money)€"
+        header?.populationcard?.setMoney(money: money)
         header?.populationcard?.hospitalLabel.text = "Hospital beds: \(beds)"
 
         

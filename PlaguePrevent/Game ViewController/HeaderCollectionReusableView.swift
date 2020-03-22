@@ -60,8 +60,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         }
         liveTickerMessages = [String]() // Reset label
     }
-    
-
+        
     func addPopulationCard() {
         let card = PopulationCard.init(frame: scrollView.frame)
         populationcard = card
