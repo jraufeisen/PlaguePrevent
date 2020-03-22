@@ -14,12 +14,20 @@ struct GesuchteWerte {
     var n_gefallen: Double
     var n_genesen: Double
     
+    var n_krankenhaus: Double
+    var n_budget: Double
+    var moral: Double
+    
     static func *(lhs: Double, rhs: GesuchteWerte) -> GesuchteWerte {
         let new_gesund = rhs.n_gesund * lhs
         let new_infiziert = rhs.n_infiziert * lhs
         let new_gefallen = rhs.n_gefallen * lhs
         let new_genesen = rhs.n_genesen * lhs
-        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen)
+        
+        let new_krankenhaus = rhs.n_krankenhaus * lhs
+        let new_budget = rhs.n_budget * lhs
+        let new_moral = rhs.moral * lhs
+        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
     }
     
     static func /(lhs: GesuchteWerte, rhs: Double) -> GesuchteWerte {
@@ -27,7 +35,12 @@ struct GesuchteWerte {
         let new_infiziert = lhs.n_infiziert / rhs
         let new_gefallen = lhs.n_gefallen / rhs
         let new_genesen = lhs.n_genesen / rhs
-        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen)
+        
+        let new_krankenhaus = lhs.n_krankenhaus / rhs
+        let new_budget = lhs.n_budget / rhs
+        let new_moral = lhs.moral / rhs
+
+        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
     }
 
     static func +(lhs: GesuchteWerte, rhs: GesuchteWerte) -> GesuchteWerte {
@@ -35,7 +48,11 @@ struct GesuchteWerte {
         let new_infiziert = lhs.n_infiziert + rhs.n_infiziert
         let new_gefallen = lhs.n_gefallen + rhs.n_gefallen
         let new_genesen = lhs.n_genesen + rhs.n_genesen
-        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen)
+        let new_krankenhaus = lhs.n_genesen + rhs.n_genesen
+        let new_budget = lhs.n_budget + rhs.n_budget
+        let new_moral = lhs.moral + rhs.moral
+
+        return GesuchteWerte.init(n_gesund: new_gesund, n_infiziert: new_infiziert, n_gefallen: new_gefallen, n_genesen: new_genesen, n_krankenhaus: new_krankenhaus, n_budget: new_budget, moral: new_moral)
     }
 
     
@@ -84,14 +101,14 @@ class Simulation {
         let health_cost = Double(measures.health.money) // Ausgaben fuer Gesundheitssystem
         let research_cost = Double(measures.science.money);// Ausgaben fuer Forschung
         let fiscal_support = Double(measures.economicHelps.money) // Wirtschaftshilfen des Staates - Sozialismus
-        let GDP = 2000000000000;
+        let GDP = 2000000000000.0;
 
-        var grenzschutz = 1.15
-        var fernverkehr = 1.1
-        var nahverkehr = 1.1
-        var arbeit = 1.1
-        var ausgang = 1.1
-        var geschaefte = 0.5
+        var grenzschutz: Double = 1.15
+        var verkehr:Double = 1.1
+        var arbeit: Double = 1.1
+        var ausgang: Double = 1.1
+        var geschaefte: Double = 0.5
+        var moral:Double  = 0.8
         
         // Now take into account the measures
         switch measures.border {
@@ -119,28 +136,56 @@ class Simulation {
         case .businessAsUsual: geschaefte = 0
         }
         
+        switch measures.traffic {
+        case .noRestriction: verkehr = 1
+        case .noFlights: verkehr = 1.25
+        case .restrictedLongDistance: verkehr = 1.5
+        case .regionalOnly: verkehr = 2
+        }
+        
+        let bevoelkerung: Double = y.n_gesund + y.n_genesen + y.n_infiziert
+        let progress: Double = 1 - y.n_gesund / bevoelkerung
+        let workforce: Double = (y.n_gesund + y.n_genesen) / bevoelkerung
+        let workforce_real: Double = workforce * (0.4/(0.4 + log(grenzschutz) + log(verkehr) + log(arbeit) + log(ausgang)))
+        
+        let sparerquote: Double = (1-moral/100) * 0.45 + 0.15
+        let fiscal_effect: Double = (fiscal_support / sparerquote) / (GDP*0.3)
+        let revenue: Double = sqrt(progress)*GDP*0.3*(1+fiscal_effect+workforce_real-geschaefte)
+        let totalcost: Double = health_cost + fiscal_support + research_cost
+        
+        let grenzschutz_moral: Double = 0.75 * 1 * ((2*y.n_infiziert)/(0.08*bevoelkerung)) - min(2,(0.05*bevoelkerung/max(y.n_infiziert,1000)))
+        let verkehr_moral: Double = 1.1 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let arbeit_moral: Double = 1.1 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let ausgang_moral:Double = 2 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let geschaefte_moral: Double = 2 * 2 * ((2*y.n_infiziert)/(0.11*bevoelkerung)) - min(3,(0.08*bevoelkerung/max(y.n_infiziert,1000)))
+        let staerke_demonstriert: Double = 3 * 6
 
+        moral = (fiscal_effect*5.0) + grenzschutz_moral + verkehr_moral + arbeit_moral + ausgang_moral + geschaefte_moral - staerke_demonstriert
+
+        let Pgi: Double = Ki*y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert)
+        let Kki: Double = Pgi * Kg * (risk_g * y.n_gesund + risk_h * y.n_genesen)
         
+        // Real ODE
         
-        let part1 = -(Ki * y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert ))
-        let part2 = Kg*risk_g*y.n_gesund
-        let f_gesund = part1 * part2
-     
-        let part3 = Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert
-        let part4 = -y.n_infiziert / krankheitsdauer
-        let part10 = Kg*(risk_g*y.n_gesund + risk_h * y.n_genesen)
-        let f_infiziert = part4 + (Ki*y.n_infiziert / (part3)) * part10
+        let part1: Double = -(Ki * y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert ))
+        let part2: Double = Kg*risk_g*y.n_gesund
+        let f_gesund: Double = part1 * part2
+        let f_infiziert: Double = -y.n_infiziert / krankheitsdauer + Kki
         
-        let part5 = y.n_infiziert * mort_nocare - h_capacity
-        let part6 = max((part5),0) + min(h_capacity,y.n_infiziert)
-        let f_gefallen = (part6)*mort_care / krankheitsdauer
+        let part5: Double = y.n_infiziert * mort_nocare - y.n_krankenhaus
+        let part6: Double = max((part5),0) + min(y.n_krankenhaus,y.n_infiziert) * mort_care
+        let f_gefallen: Double = (part6) / krankheitsdauer
         
-        let part7 = max((y.n_infiziert * mort_nocare - h_capacity),0)
-        let part8 = min(h_capacity,y.n_infiziert)
-        let part9 = (Ki*y.n_infiziert / (Kg*y.n_gesund+y.n_genesen+Ki*y.n_infiziert))
-        let f_genesen = (y.n_infiziert - (part7 + part8)*mort_care) / krankheitsdauer - part9 * Kg*(risk_h*y.n_genesen)
+        let part7: Double = max((y.n_infiziert * mort_nocare - y.n_krankenhaus),0)
+        let part8: Double = min(y.n_krankenhaus,y.n_infiziert)*mort_care
+        let part9: Double = (Ki*y.n_infiziert / (Kg*(y.n_gesund+y.n_genesen)+Ki*y.n_infiziert))
+        let f_genesen: Double = (y.n_infiziert - (part7 + part8)) / krankheitsdauer - part9 * Kg*(risk_h*y.n_genesen)
         
-        return GesuchteWerte.init(n_gesund: f_gesund, n_infiziert: f_infiziert, n_gefallen: f_gefallen, n_genesen: f_genesen)
+        let f_krankenhaus: Double = health_cost - totalcost
+        let f_budget: Double = revenue - totalcost
+        let f_moral: Double = moral / 100
+        
+        return GesuchteWerte.init(n_gesund: f_gesund, n_infiziert: f_infiziert, n_gefallen: f_gefallen, n_genesen: f_genesen, n_krankenhaus: f_krankenhaus, n_budget: f_budget, moral: f_moral)
     }
     
     // Call this once to receive the complete simulation results

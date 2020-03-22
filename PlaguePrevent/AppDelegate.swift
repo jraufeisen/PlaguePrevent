@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let ab = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0)
+        let ab = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
         let sim = Simulation.init(anfangswerte: ab)
         let values = sim.simulate(dx: 0.1, end: 700)
         
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let y = infected[i]
             text += "\(y)\n"
         }
-        //print(text)
+        print(text)
         // Override point for customization after application launch.
         return true
     }

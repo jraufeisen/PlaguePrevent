@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
         measuresCollectionView.collectionViewLayout = stickySplitLayout
         stickySplitLayout.parallaxHeaderAlwaysOnTop = true
         
-        let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0)
+        let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
         simulation = Simulation.init(anfangswerte: initCondition)
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
             self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
