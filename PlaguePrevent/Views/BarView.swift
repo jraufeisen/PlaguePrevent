@@ -24,6 +24,9 @@ class BarView: UIView {
     
     @IBInspectable var fillPercent: CGFloat = 0.5 {
         didSet {
+            fillPercent += 0.2 // Hack to make the label visible. Not nice, but... well it's a hackathon
+            fillPercent = min(1,fillPercent)
+            fillPercent = max(0,fillPercent)
             updateFill()
         }
     }
