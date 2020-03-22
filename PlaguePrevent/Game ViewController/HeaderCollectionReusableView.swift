@@ -29,6 +29,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        scrollView.isOpaque = true
         // Initialization code
         topLabel.labelize = false
         topLabel.type = .continuous

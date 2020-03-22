@@ -33,7 +33,7 @@ class CasesCard: UIView {
         contentView.frame = self.bounds
         //contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if #available(iOS 13.0, *) {
-            contentView.backgroundColor = .secondarySystemGroupedBackground
+            contentView.backgroundColor = .systemBackground
         } else {
             contentView.backgroundColor = UIColor.white
         }
