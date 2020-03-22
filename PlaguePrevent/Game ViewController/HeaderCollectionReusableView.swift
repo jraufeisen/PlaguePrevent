@@ -22,9 +22,24 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     var casesCard: CasesCard?
     var populationcard: PopulationCard?
     
-    var liveTickerMessages = [String]() {
+    private var liveTickerMessages = [String]() {
         didSet {
-            topLabel.text = liveTickerMessages.joined(separator: " +++ ") + " +++ "
+            if liveTickerMessages.count > 1 {
+                topLabel.text = liveTickerMessages.joined(separator: " +++ ") + " +++ "
+            } else if liveTickerMessages.count == 1 {
+                topLabel.text = "+++ " + liveTickerMessages.first! + " +++"
+            } else if liveTickerMessages.count == 0 {
+                topLabel.text = ""
+            }
+        }
+    }
+    
+    func addLiveTicker(text: String, duration: TimeInterval) {
+        liveTickerMessages.append(text)
+        Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { (timer) in
+            if let index = self.liveTickerMessages.firstIndex(of: text) {
+                self.liveTickerMessages.remove(at: index)
+            }
         }
     }
     
@@ -43,7 +58,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         if traitCollection.userInterfaceStyle == .dark {
             imageView.image = imageView.image?.withTintColor(.white)
         }
-
+        liveTickerMessages = [String]() // Reset label
     }
     
 

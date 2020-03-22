@@ -56,4 +56,7 @@ extension MeasureDescription {
     func infoText() -> String {
         return "Change your policy"
     }
+    func instantTickerFeedback() -> String {
+        return "Ticker Message"
+    }
 }

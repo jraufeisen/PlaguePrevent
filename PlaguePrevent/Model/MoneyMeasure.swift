@@ -31,6 +31,7 @@ protocol MeasureDescription {
     func smallLogo() -> UIImage
     func largeLogo() -> UIImage
     func infoText() -> String
+    func instantTickerFeedback() -> String
 }
 
 // Global setting, slider

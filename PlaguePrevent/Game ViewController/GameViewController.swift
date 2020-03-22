@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     private var measurePackage = MeasurePackage()
     private var simulation: Simulation?
     
+    private var tickerStayDuration: TimeInterval = 20.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let headerNib = UINib(nibName: "HeaderCollectionReusableView", bundle: .main)
@@ -97,11 +99,6 @@ extension GameViewController: UICollectionViewDelegate {
                 DispatchQueue.main.async {
                     self.header?.addCasesCard()
                     self.header?.addPopulationCard()
-                    self.header?.liveTickerMessages.append("test hier")
-                    self.header?.liveTickerMessages.append("test hier 2")
-                    self.header?.liveTickerMessages.append("test hier 3")
-                    self.header?.liveTickerMessages.append("test hier 4")
-
                 }
                 return cell
             default:
@@ -134,47 +131,70 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Change measure package
 
 extension GameViewController: ChangeMeasuresDelegate {
+    
     func didChangeEffectiveness(state: MeasureEffectiveness) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.enforcement = state
     }
     
     func didChangeBorder(state: MeasureTypeBorder) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.border = state
     }
     
     func didChangeSchools(state: MeasureTypeSchools) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.school = state
     }
     
     func didChangeTraffic(state: MeasureTypeTraffic) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.traffic = state
     }
     
     func didChangeWork(state: MeasureTypeWork) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.work = state
     }
     
     func didChangeAusgangssperre(state: MeasureTypeAusgangssperre) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.ausgangssperre = state
     }
     
     func didChangeBusinesses(state: MeasureTypeBusinesses) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.business = state
     }
     
     func didChangeCommunication(state: MeasureTypeCommunication) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.communication = state
     }
     
     func didChangeScience(state: ScienceMeasure) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.science = state
     }
     
     func didChangeHealth(state: HealthServicesMeasure) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.health = state
     }
     
     func didChangeEconomics(state: EconomicHelpMeasure) {
+        let newTicker = state.instantTickerFeedback()
+        header?.addLiveTicker(text: newTicker, duration: tickerStayDuration)
         measurePackage.economicHelps = state
     }
     
