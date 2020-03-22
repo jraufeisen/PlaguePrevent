@@ -22,6 +22,12 @@ extension MeasureTypeSchools {
         popup.addButtons([buttonOne, buttonTwo])
         popup.transitionStyle = .bounceUp
         
+        switch self {
+        case .open: buttonOne.titleColor = .systemBlue
+        case .closed: buttonTwo.titleColor = .systemBlue
+        }
+
+        
         return popup
     }
 

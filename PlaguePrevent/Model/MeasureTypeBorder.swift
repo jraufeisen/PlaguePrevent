@@ -16,14 +16,25 @@ extension MeasureTypeBorder {
         let buttonOne = CancelButton(title: MeasureTypeBorder.open.longDescription()) {
             delegate.didChangeBorder(state: .open)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeBorder.goodsOnly.longDescription()) {
+        let buttonTwo = CancelButton(title: MeasureTypeBorder.open.longDescription()) {
+            delegate.didChangeBorder(state: .open)
+        }
+        let buttonThree = CancelButton(title: MeasureTypeBorder.goodsOnly.longDescription()) {
             delegate.didChangeBorder(state: .goodsOnly)
         }
-        let buttonThree = CancelButton(title: MeasureTypeBorder.closed.longDescription()) {
+        let buttonFour = CancelButton(title: MeasureTypeBorder.closed.longDescription()) {
             delegate.didChangeBorder(state: .closed)
         }
 
-        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        switch self {
+        case .open: buttonOne.titleColor = .systemBlue
+        case .noTourists: buttonTwo.titleColor = .systemBlue
+        case .goodsOnly: buttonThree.titleColor = .systemBlue
+        case .closed: buttonThree.titleColor = .systemBlue
+        }
+
+    
+        popup.addButtons([buttonOne, buttonTwo, buttonThree, buttonFour])
         popup.transitionStyle = .bounceUp
         
         return popup

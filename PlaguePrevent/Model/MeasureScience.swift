@@ -33,9 +33,10 @@ extension ScienceMeasure {
             let enteredMoney = Int(moneyString) ?? 0
             delegate.didChangeScience(state: ScienceMeasure.init(money: enteredMoney))
         }
+
         popup.addButtons([buttonOne, buttonTwo])
-        
         popup.transitionStyle = .bounceUp
+                
         return popup
     }
 

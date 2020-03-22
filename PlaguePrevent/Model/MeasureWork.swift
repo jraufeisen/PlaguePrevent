@@ -28,6 +28,13 @@ extension MeasureTypeWork {
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
         popup.transitionStyle = .bounceUp
         
+        switch self {
+        case .asUsual: buttonOne.titleColor = .systemBlue
+        case .homeOfficeWherePossible: buttonTwo.titleColor = .systemBlue
+        case .homeOfficeEverywhere: buttonThree.titleColor = .systemBlue
+        }
+
+        
         return popup
     }
 

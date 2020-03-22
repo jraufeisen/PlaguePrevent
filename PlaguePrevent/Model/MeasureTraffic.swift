@@ -31,6 +31,14 @@ extension MeasureTypeTraffic {
         popup.addButtons([buttonOne, buttonTwo, buttonThree, buttonFour])
         popup.transitionStyle = .bounceUp
         
+        switch self {
+        case .noRestriction: buttonOne.titleColor = .systemBlue
+        case .noFlights: buttonTwo.titleColor = .systemBlue
+        case .restrictedLongDistance: buttonThree.titleColor = .systemBlue
+        case .regionalOnly: buttonFour.titleColor = .systemBlue
+        }
+
+        
         return popup
     }
 

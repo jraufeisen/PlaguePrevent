@@ -29,6 +29,14 @@ extension MeasureTypeCommunication {
         popup.addButtons([buttonOne, buttonTwo, buttonThree, buttonFour])
         popup.transitionStyle = .bounceUp
         
+        switch self {
+        case .fullTransparency: buttonOne.titleColor = .systemBlue
+        case .euphemistic: buttonTwo.titleColor = .systemBlue
+        case .calmingTransparency: buttonThree.titleColor = .systemBlue
+        case .sayNothing: buttonFour.titleColor = .systemBlue
+        }
+
+        
         return popup
     }
 

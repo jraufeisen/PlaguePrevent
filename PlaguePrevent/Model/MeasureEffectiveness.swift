@@ -25,6 +25,13 @@ extension MeasureEffectiveness {
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
         popup.transitionStyle = .bounceUp
         
+        switch self {
+        case .voluntarily: buttonOne.titleColor = .systemBlue
+        case .enforcedByPolice: buttonTwo.titleColor = .systemBlue
+        case .enforcedByMilitary: buttonThree.titleColor = .systemBlue
+        }
+
+        
         return popup
     }
 

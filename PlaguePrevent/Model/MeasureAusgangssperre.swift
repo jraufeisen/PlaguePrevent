@@ -20,12 +20,21 @@ extension MeasureTypeAusgangssperre {
         let buttonOne = CancelButton(title: MeasureTypeAusgangssperre.active.longDescription()) {
             delegate.didChangeAusgangssperre(state: .active)
         }
-        let buttonTwo = CancelButton(title: MeasureTypeAusgangssperre.inactive.longDescription()) {
+        let buttonTwo = CancelButton(title: MeasureTypeAusgangssperre.sperrstunden.longDescription()) {
+            delegate.didChangeAusgangssperre(state: .inactive)
+        }
+        let buttonThree = CancelButton(title: MeasureTypeAusgangssperre.inactive.longDescription()) {
             delegate.didChangeAusgangssperre(state: .inactive)
         }
 
         popup.addButtons([buttonOne, buttonTwo])
         popup.transitionStyle = .bounceUp
+        
+        switch self {
+        case .active:       buttonOne.titleColor = .systemBlue
+        case .sperrstunden: buttonTwo.titleColor = .systemBlue
+        case .inactive:     buttonThree.titleColor = .systemBlue
+        }
         
         return popup
     }

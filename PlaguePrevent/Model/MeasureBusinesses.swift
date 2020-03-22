@@ -23,6 +23,13 @@ extension MeasureTypeBusinesses {
         let buttonThree = CancelButton(title: MeasureTypeBusinesses.supermarketOnly.longDescription()) {
             delegate.didChangeBusinesses(state: .supermarketOnly)
         }
+        
+        switch self {
+        case .businessAsUsual: buttonOne.titleColor = .systemBlue
+        case .restrictedClosingHours: buttonTwo.titleColor = .systemBlue
+        case .supermarketOnly: buttonThree.titleColor = .systemBlue
+        }
+        
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
         popup.transitionStyle = .bounceUp
         
