@@ -22,9 +22,14 @@ class BarView: UIView {
         }
     }
     
+    @IBInspectable var alwaysFilledDistance: CGFloat = 0 {
+        didSet {
+            updateFill()
+        }
+    }
+    
     @IBInspectable var fillPercent: CGFloat = 0.5 {
         didSet {
-            fillPercent += 0.2 // Hack to make the label visible. Not nice, but... well it's a hackathon
             fillPercent = min(1,fillPercent)
             fillPercent = max(0,fillPercent)
             updateFill()
@@ -49,11 +54,11 @@ class BarView: UIView {
     private func updateFill() {
         switch orientation {
         case .vertical:
-            let fillHeight = bounds.height * fillPercent
+            let fillHeight = max(alwaysFilledDistance,bounds.height * fillPercent)
             let maskRect = CGRect.init(x: bounds.origin.x, y: bounds.size.height - fillHeight, width: bounds.size.width, height: fillHeight)
             layer.round(roundedRect: maskRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
         case .horizontal:
-            let fillWidth = bounds.width * fillPercent
+            let fillWidth = max(alwaysFilledDistance,bounds.width * fillPercent)
             let maskRect = CGRect.init(x: bounds.origin.x , y: bounds.origin.y, width: fillWidth, height: bounds.size.height)
             layer.round(roundedRect: maskRect, byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
 

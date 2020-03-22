@@ -40,6 +40,9 @@ class CasesCard: UIView {
 
         deathsBarView.fillPercent = 0
         recoveredBarView.fillPercent = 0
+        
+        deathsBarView.alwaysFilledDistance = 50 // Make labels visible
+        recoveredBarView.alwaysFilledDistance = 50 // Make abels visible
     }
 
 }

@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         
         let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
         simulation = Simulation.init(anfangswerte: initCondition)
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { (timer) in
             self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
             self.updateUI()
         }
@@ -51,6 +51,16 @@ class GameViewController: UIViewController {
         header?.casesCard?.recoveredLabel.text = "\(Int(recovered)) recovered"
         header?.casesCard?.recoveredBarView.fillPercent = CGFloat(recovered/infected)
         header?.casesCard?.deathsBarView.fillPercent = CGFloat(deaths/infected)
+        
+        let beds = Int(latestValue.n_krankenhaus)
+        let money = Int(latestValue.n_budget)
+        let moral = Int(latestValue.moral)
+        
+        header?.populationcard?.moralLabel.text = "Moral: \(moral)"
+        header?.populationcard?.moneyLabel.text = "Money: \(money)€"
+        header?.populationcard?.hospitalLabel.text = "Hospital beds: \(beds)"
+
+        
     }
     
 }

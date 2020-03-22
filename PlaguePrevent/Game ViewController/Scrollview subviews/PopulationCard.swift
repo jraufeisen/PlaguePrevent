@@ -44,6 +44,10 @@ class PopulationCard: UIView {
         moralBarView.fillPercent = 0
         hospitalBarView.fillPercent = 0
         budgetBarView.fillPercent = 0
+        
+        moralBarView.alwaysFilledDistance = 80
+        budgetBarView.alwaysFilledDistance = 80
+        hospitalBarView.alwaysFilledDistance = 80
     }
 
 }
