@@ -26,7 +26,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-VN-su9">
-                                <rect key="frame" x="359" y="75" width="35" height="33"/>
+                                <rect key="frame" x="359" y="100" width="35" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="5Oh-dj-gHR"/>
                                     <constraint firstAttribute="width" constant="35" id="fcM-pg-5AA"/>
@@ -43,7 +43,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUs-fA-fpz" secondAttribute="trailing" constant="20" id="XYZ-nW-xCG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Hs-VN-su9" secondAttribute="trailing" constant="20" id="aOo-Vi-Dzb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eUs-fA-fpz" secondAttribute="bottom" id="fxj-dm-w2M"/>
-                            <constraint firstItem="7Hs-VN-su9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="gJE-4s-xPx"/>
+                            <constraint firstItem="7Hs-VN-su9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="gJE-4s-xPx"/>
                             <constraint firstItem="eUs-fA-fpz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uOm-ms-ovn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

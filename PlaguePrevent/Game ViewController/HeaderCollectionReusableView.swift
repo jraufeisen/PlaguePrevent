@@ -31,7 +31,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         topLabel.speed = .rate(70)
         topLabel.animationCurve = .linear
         topLabel.fadeLength = 0
-
+        topLabel.liveTickerMessages.removeAll() // dont set text to ""
         topLabel.restartLabel()
         
         if traitCollection.userInterfaceStyle == .dark {

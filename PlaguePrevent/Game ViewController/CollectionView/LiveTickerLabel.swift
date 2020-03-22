@@ -19,6 +19,7 @@ class LiveTickerLabel: MarqueeLabel {
     }
     
     func addLiveTicker(text: String, duration: TimeInterval) {
+        guard text != "" else {return}
         liveTickerMessages.append(text)
         Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { (timer) in
             if let index = self.liveTickerMessages.firstIndex(of: text) {
