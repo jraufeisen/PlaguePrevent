@@ -30,11 +30,25 @@ class GameViewController: UIViewController {
         stickySplitLayout.parallaxHeaderAlwaysOnTop = true
         
         let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
-        simulation = Simulation.init(anfangswerte: initCondition)
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { (timer) in
-            self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
-            self.updateUI()
+        
+        if simulation == nil {
+            simulation = Simulation.init(anfangswerte: initCondition)
+            Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { (timer) in
+                self.simulation?.simulateNextStep(measurePackage: self.measurePackage)
+                self.updateUI()
+            }
         }
+        
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            statsButton.tintColor = .white
+        case .light:
+            statsButton.tintColor = .black
+        default:
+            print("UI Warning: Unrecognized user trait")
+        }
+
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -64,6 +78,11 @@ class GameViewController: UIViewController {
         
     }
     
+    @IBAction func pressedStats(_ sender: Any) {
+        guard let simulation = simulation else {return}
+        let statsVC = StatsViewController.instantiate(simulation: simulation)
+        showDetailViewController(statsVC, sender: nil)
+    }
 }
 
 // MARK: - UICollectionViewDataSource

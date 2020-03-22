@@ -19,6 +19,9 @@
 		EB4C16EE24279C1900DCD348 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C16EC24279C1900DCD348 /* HeaderCollectionReusableView.xib */; };
 		EB4C16F22427A4DA00DCD348 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C16EF2427A49200DCD348 /* StatsViewController.swift */; };
 		EB4C16F82427A73800DCD348 /* InfectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */; };
+		EB4C16F92427A8C200DCD348 /* InfectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */; };
+		EB4C17042427AD1500DCD348 /* DeathsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */; };
+		EB4C17052427AD1500DCD348 /* DeathsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */; };
 		EB745E4F24257361005280BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E4E24257361005280BB /* AppDelegate.swift */; };
 		EB745E5124257361005280BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5024257361005280BB /* SceneDelegate.swift */; };
 		EB745E5324257361005280BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB745E5224257361005280BB /* GameViewController.swift */; };
@@ -77,6 +80,8 @@
 		EB4C16EF2427A49200DCD348 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedTableViewCell.swift; sourceTree = "<group>"; };
 		EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfectedTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeathsTableViewCell.xib; sourceTree = "<group>"; };
+		EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathsTableViewCell.swift; sourceTree = "<group>"; };
 		EB745E4B24257361005280BB /* PlaguePrevent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaguePrevent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB745E4E24257361005280BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB745E5024257361005280BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +201,8 @@
 			children = (
 				EB4C16F32427A56200DCD348 /* InfectedTableViewCell.swift */,
 				EB4C16F42427A56200DCD348 /* InfectedTableViewCell.xib */,
+				EB4C17032427AD1500DCD348 /* DeathsTableViewCell.swift */,
+				EB4C17022427AD1500DCD348 /* DeathsTableViewCell.xib */,
 			);
 			path = "Graph Cells";
 			sourceTree = "<group>";
@@ -368,12 +375,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4C17042427AD1500DCD348 /* DeathsTableViewCell.xib in Resources */,
 				EB390DB724265B730009CEB0 /* PopulationCard.xib in Resources */,
 				EB745E5B24257364005280BB /* LaunchScreen.storyboard in Resources */,
 				EB4C16EE24279C1900DCD348 /* HeaderCollectionReusableView.xib in Resources */,
 				EB745E5824257364005280BB /* Assets.xcassets in Resources */,
 				EB47A34D2426D48100868B50 /* PopupMoneyViewController.xib in Resources */,
 				EBDFEC05242634AF00C896FC /* .gitkeep in Resources */,
+				EB4C16F92427A8C200DCD348 /* InfectedTableViewCell.xib in Resources */,
 				EB745E6924258557005280BB /* MeasuresCollectionViewCell.xib in Resources */,
 				EB745E5624257361005280BB /* Main.storyboard in Resources */,
 				EB390DB3242659D50009CEB0 /* CasesCard.xib in Resources */,
@@ -448,6 +457,7 @@
 				EBDFEC0D242634AF00C896FC /* PopupDialogDefaultButtons.swift in Sources */,
 				EBDFEC13242637F700C896FC /* MeasurePackage.swift in Sources */,
 				EB982D6A24267BD30080099D /* MeasureWork.swift in Sources */,
+				EB4C17052427AD1500DCD348 /* DeathsTableViewCell.swift in Sources */,
 				EBDFEC07242634AF00C896FC /* PopupDialogButton.swift in Sources */,
 				EB982D6224267B320080099D /* MeasureEffectiveness.swift in Sources */,
 				EBDFEC0B242634AF00C896FC /* PopupDialogDefaultViewController.swift in Sources */,
