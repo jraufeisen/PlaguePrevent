@@ -21,6 +21,9 @@ class GameViewController: UIViewController {
     
     private var tickerStayDuration: TimeInterval = 30.0
     
+    let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let headerNib = UINib(nibName: "HeaderCollectionReusableView", bundle: .main)
@@ -28,9 +31,7 @@ class GameViewController: UIViewController {
         measuresCollectionView.register(UINib.init(nibName: "MeasuresCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "MeasuresCellID")
         measuresCollectionView.collectionViewLayout = stickySplitLayout
         stickySplitLayout.parallaxHeaderAlwaysOnTop = true
-        
-        let initCondition = GesuchteWerte.init(n_gesund: 8000000, n_infiziert: 30000, n_gefallen: 0, n_genesen: 0, n_krankenhaus: 100000, n_budget: 300000000000, moral: 100)
-        
+                
         if simulation == nil {
             simulation = Simulation.init(anfangswerte: initCondition)
             Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { (timer) in
@@ -81,8 +82,6 @@ class GameViewController: UIViewController {
         header?.populationcard?.moralLabel.text = "Moral: \(moral)"
         header?.populationcard?.setMoney(money: money)
         header?.populationcard?.hospitalLabel.text = "\(beds) hospital beds"
-
-        
     }
     
     @IBAction func pressedStats(_ sender: Any) {
@@ -90,6 +89,7 @@ class GameViewController: UIViewController {
         let statsVC = StatsViewController.instantiate(simulation: simulation)
         showDetailViewController(statsVC, sender: nil)
     }
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -136,6 +136,7 @@ extension GameViewController: UICollectionViewDelegate {
                 DispatchQueue.main.async {
                     self.header?.addCasesCard()
                     self.header?.addPopulationCard()
+                    self.updateUI()
                 }
                 return cell
             default:
